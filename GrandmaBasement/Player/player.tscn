@@ -1,10 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctivnp0y5etuk"]
+[gd_scene load_steps=4 format=3 uid="uid://ctivnp0y5etuk"]
 
 [ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://icon.svg" id="1_56en5"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_u67x1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6afm"]
+size = Vector2(128, 128)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_u67x1")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_56en5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_c6afm")
+
+[node name="idle" type="Node" parent="."]
+
+[node name="walk" type="Node" parent="."]
+
+[node name="jump" type="Node" parent="."]
+
+[node name="fall" type="Node" parent="."]
+
+[node name="jetpack" type="Node" parent="."]

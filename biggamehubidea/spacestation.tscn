@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://by3k6ybyg8w2u"]
+
+[ext_resource type="Script" path="res://spacestation.gd" id="1_fee5r"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1j67q"]
+radius = 34.7617
+
+[node name="spacestation" type="Node3D"]
+script = ExtResource("1_fee5r")
+
+[node name="basement" type="CSGSphere3D" parent="."]
+radius = 24.8083
+
+[node name="basement" type="Area3D" parent="basement"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="basement/basement"]
+shape = SubResource("SphereShape3D_1j67q")
+
+[node name="kitchen" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.019, 113.616, 94.5007)
+radius = 24.8083
+
+[node name="kitchen" type="Area3D" parent="kitchen"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="kitchen/kitchen"]
+shape = SubResource("SphereShape3D_1j67q")
+
+[node name="livingroom" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150.098, 186.89, 60.6842)
+radius = 24.8083
+
+[node name="livingroom" type="Area3D" parent="livingroom"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="livingroom/livingroom"]
+shape = SubResource("SphereShape3D_1j67q")
+
+[node name="bathroom" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 168.692, -141.821)
+radius = 24.8083
+
+[node name="bathroom" type="Area3D" parent="bathroom"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bathroom/bathroom"]
+shape = SubResource("SphereShape3D_1j67q")
+
+[node name="bedroom" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 350, 2.08165e-12)
+radius = 24.8083
+
+[node name="bedroom" type="Area3D" parent="bedroom"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bedroom/bedroom"]
+shape = SubResource("SphereShape3D_1j67q")
+
+[connection signal="mouse_entered" from="basement/basement" to="." method="_on_basement_mouse_entered"]
+[connection signal="mouse_entered" from="kitchen/kitchen" to="." method="_on_kitchen_mouse_entered"]
+[connection signal="mouse_entered" from="livingroom/livingroom" to="." method="_on_livingroom_mouse_entered"]
+[connection signal="mouse_entered" from="bathroom/bathroom" to="." method="_on_bathroom_mouse_entered"]
+[connection signal="mouse_entered" from="bedroom/bedroom" to="." method="_on_bedroom_mouse_entered"]

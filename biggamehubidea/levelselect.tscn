@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://dn5v56bj3660q"]
+
+[ext_resource type="Texture2D" uid="uid://dmqo4b5358ijm" path="res://BfemybeKVXCf9pgX9WCxsc-1200-80.jpg" id="1_4cv61"]
+[ext_resource type="PackedScene" uid="uid://by3k6ybyg8w2u" path="res://spacestation.tscn" id="1_163kl"]
+[ext_resource type="Script" path="res://levelselect.gd" id="1_ggc33"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_nh383"]
+panorama = ExtResource("1_4cv61")
+
+[sub_resource type="Sky" id="Sky_5f5qp"]
+sky_material = SubResource("PanoramaSkyMaterial_nh383")
+
+[sub_resource type="Environment" id="Environment_4oadg"]
+background_mode = 2
+sky = SubResource("Sky_5f5qp")
+ambient_light_source = 3
+
+[node name="levelselect" type="Node3D"]
+script = ExtResource("1_ggc33")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4oadg")
+
+[node name="spacestation" parent="." instance=ExtResource("1_163kl")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 169.303, 369.344)
+
+[node name="Label3D" type="Label3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38105, 0.545761, -1.53192)
+text = "hi"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

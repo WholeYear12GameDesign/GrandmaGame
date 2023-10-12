@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://b3yjc6q22udw3"]
+[gd_scene load_steps=2 format=3 uid="uid://b3yjc6q22udw3"]
+
+[ext_resource type="Script" path="res://Player/states/walk.gd" id="1_247c6"]
 
 [node name="walk" type="Node"]
+script = ExtResource("1_247c6")

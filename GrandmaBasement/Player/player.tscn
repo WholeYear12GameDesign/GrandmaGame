@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://ctivnp0y5etuk"]
+[gd_scene load_steps=10 format=3 uid="uid://bfgkexhb4ho88"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_u67x1"]
 [ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="2_yvcg4"]
-[ext_resource type="Script" path="res://Player/states.gd" id="3_k4r02"]
+[ext_resource type="Script" path="res://Player/states/states.gd" id="3_477pk"]
 [ext_resource type="PackedScene" uid="uid://3baqbxgaddpt" path="res://Player/states/fall.tscn" id="4_cpdu4"]
 [ext_resource type="PackedScene" uid="uid://bxkduep2swuv1" path="res://Player/states/idle.tscn" id="5_pmd4m"]
 [ext_resource type="PackedScene" uid="uid://e5ygk6cqu02" path="res://Player/states/jetpack.tscn" id="6_gdjrt"]
@@ -21,8 +21,15 @@ texture = ExtResource("2_yvcg4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_c6afm")
 
+[node name="currentstate" type="Label" parent="."]
+offset_left = -19.0
+offset_top = -107.0
+offset_right = 21.0
+offset_bottom = -81.0
+text = "state"
+
 [node name="states" type="Node" parent="."]
-script = ExtResource("3_k4r02")
+script = ExtResource("3_477pk")
 
 [node name="fall" parent="states" instance=ExtResource("4_cpdu4")]
 
@@ -33,5 +40,3 @@ script = ExtResource("3_k4r02")
 [node name="jump" parent="states" instance=ExtResource("7_o2y1s")]
 
 [node name="walk" parent="states" instance=ExtResource("8_cufm2")]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

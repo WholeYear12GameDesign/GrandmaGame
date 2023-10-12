@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://e5ygk6cqu02"]
+[gd_scene load_steps=2 format=3 uid="uid://e5ygk6cqu02"]
+
+[ext_resource type="Script" path="res://Player/states/jetpack.gd" id="1_srjcg"]
 
 [node name="jetpack" type="Node"]
+script = ExtResource("1_srjcg")

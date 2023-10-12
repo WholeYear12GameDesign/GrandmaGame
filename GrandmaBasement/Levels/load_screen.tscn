@@ -3,13 +3,25 @@
 [ext_resource type="Script" path="res://Levels/load_screen.gd" id="1_u6m0d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pytg4"]
-size = Vector2(56, 460)
+size = Vector2(190, 46)
 
 [node name="LoadScreen" type="Area2D"]
+monitoring = false
 script = ExtResource("1_u6m0d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, -20)
+position = Vector2(3, 3)
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_pytg4")
 
+[node name="UnloadTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="WaitTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="UnloadTimer" to="." method="UnloadTimer"]
+[connection signal="timeout" from="WaitTimer" to="." method="WaitTimer"]

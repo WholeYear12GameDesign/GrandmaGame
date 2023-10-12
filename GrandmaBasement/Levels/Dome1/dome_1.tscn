@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bko50kji0lg6b"]
+
+[ext_resource type="PackedScene" uid="uid://cvty8n1cnto1q" path="res://Levels/Dome1/Dome1Screen1.tscn" id="1_aky3d"]
+[ext_resource type="PackedScene" uid="uid://bfgkexhb4ho88" path="res://Player/player.tscn" id="2_odmfe"]
+[ext_resource type="Script" path="res://Player/Camera2D.gd" id="3_4egju"]
+
+[node name="Dome1" type="Node2D"]
+
+[node name="Dome1Screen1" parent="." instance=ExtResource("1_aky3d")]
+
+[node name="Player" parent="." instance=ExtResource("2_odmfe")]
+position = Vector2(-25, -77)
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+script = ExtResource("3_4egju")

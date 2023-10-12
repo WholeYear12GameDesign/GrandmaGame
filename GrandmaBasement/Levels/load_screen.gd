@@ -10,6 +10,7 @@ func switch_screen(path):
 	get_parent().get_parent().add_child(instance)
 	instance.global_position += get_parent().global_position + offset
 	get_parent().get_parent().get_node("Camera2D").global_position = instance.global_position
+	monitoring = false
 	$UnloadTimer.start()
 
 # runs switch_screen() when player collides with collision shape

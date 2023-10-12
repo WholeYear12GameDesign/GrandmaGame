@@ -15,7 +15,7 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_pytg4")
 
 [node name="UnloadTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.6
 one_shot = true
 
 [node name="WaitTimer" type="Timer" parent="."]

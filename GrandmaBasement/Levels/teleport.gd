@@ -10,7 +10,4 @@ func load_level(path):
 func _on_body_entered(body):
 	if body.name == "Player":
 		load_level(next_level)
-		
-# Makes door collidable after some time
-func WaitTimer():
-	monitoring = true
+	

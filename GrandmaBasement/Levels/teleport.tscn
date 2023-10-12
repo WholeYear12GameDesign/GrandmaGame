@@ -8,9 +8,12 @@ size = Vector2(130, 126)
 
 [node name="Teleport" type="Area2D"]
 script = ExtResource("1_mslhv")
+next_level = "res://Levels/Dome1/Dome_1.tscn"
 
 [node name="Icon" type="Sprite2D" parent="."]
 texture = ExtResource("1_knvkx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dgeeq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

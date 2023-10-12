@@ -19,6 +19,10 @@ config/icon="res://Art assets/icon.svg"
 
 player_data="*res://Player/autoloads.gd"
 
+[display]
+
+window/size/resizable=false
+
 [input]
 
 left={

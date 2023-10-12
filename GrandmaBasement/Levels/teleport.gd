@@ -1,11 +1,16 @@
 extends Area2D
 
+@export var next_level = ""
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+# switch to a diffrent level
+func load_level(path):
+	get_tree().change_scene_to_file(path)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+# runs switch_screen() when player collides with collision shape
+func _on_body_entered(body):
+	if body.name == "Player":
+		load_level(next_level)
+		
+# Makes door collidable after some time
+func WaitTimer():
+	monitoring = true

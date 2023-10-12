@@ -12,6 +12,8 @@ func update(delta):
 		jumptimer.stop()
 	if player.velocity.y > 0:
 		return states.fall
+	if player_data.oxygen > 0 and player.jetpack_input:
+		return states.jetpack
 	return null
 
 func enter_state():

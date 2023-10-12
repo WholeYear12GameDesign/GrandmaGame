@@ -11,6 +11,8 @@ func update(delta):
 		return states.idle
 	if player.jump_input_actuation and can_jump:
 		return states.jump
+	if player_data.oxygen > 0 and player.jetpack_input:
+		return states.jetpack
 	return null
 
 func enter_state():

@@ -8,4 +8,6 @@ func update(delta):
 		return states.jump
 	if player.velocity.y > 0:
 		return states.fall
+	if player_data.oxygen > 0 and player.jetpack_input:
+		return states.jetpack
 	return null

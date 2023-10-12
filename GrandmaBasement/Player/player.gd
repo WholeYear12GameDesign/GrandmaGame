@@ -12,13 +12,15 @@ var prev_state = null
 var movement_input = Vector2.ZERO
 var jump_input = false
 var jump_input_actuation = false
-var speed = 100
-var jump_velocity = -10
-var max_speed = 500
+var jetpack_input = false
 
 #other vars
-var gravity = 100
-var max_gravity = 100
+var gravity = 30
+var max_gravity = 10
+var speed = 60
+var jump_velocity = -12
+var max_speed = 30
+var air = false
 
 func _ready():
 	prev_state = states.idle
@@ -30,7 +32,7 @@ func _ready():
 func _process(delta):
 	#debug please delete in future
 	$currentstate.text = str(current_state.name)
-	print(velocity)
+	#print(velocity)
 	
 	
 	move_and_slide()
@@ -45,8 +47,6 @@ func _process(delta):
 		movement_input.y -= 1
 	if Input.is_action_pressed("down"):
 		movement_input.y += 1
-	
-	#jump
 	if Input.is_action_pressed("jump"):
 		jump_input = true
 	else:
@@ -55,6 +55,15 @@ func _process(delta):
 		jump_input_actuation = true
 	else:
 		jump_input_actuation = false
+	if Input.is_action_pressed("jetpack"):
+		jetpack_input = true
+	else:
+		jetpack_input = false
+	
+	#oxygen
+	if !air:
+		player_data.oxygen -= delta
+		print(player_data.oxygen)
 	
 	change_state(current_state.update(delta))
 

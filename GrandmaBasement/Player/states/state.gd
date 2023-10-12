@@ -23,3 +23,9 @@ func player_movement(delta):
 			player.velocity.x = 0
 	elif player.movement_input.x == 0:
 		player.velocity.x = 0
+	if player.is_on_floor():
+		player.speed = 60
+		player.max_speed = 30
+	else:
+		player.speed = 40
+		player.max_speed = 20

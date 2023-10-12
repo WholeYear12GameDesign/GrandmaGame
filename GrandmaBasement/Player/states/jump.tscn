@@ -4,3 +4,6 @@
 
 [node name="jump" type="Node"]
 script = ExtResource("1_xr81p")
+
+[node name="jumpholdtimer" type="Timer" parent="."]
+one_shot = true

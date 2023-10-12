@@ -12,8 +12,8 @@ var prev_state = null
 var movement_input = Vector2.ZERO
 var jump_input = false
 var jump_input_actuation = false
-var speed = 1800
-var jump_velocity = -530
+var speed = 100
+var jump_velocity = -10
 var max_speed = 500
 
 #other vars

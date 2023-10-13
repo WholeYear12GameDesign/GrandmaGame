@@ -1,16 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://do87g76mv20xn"]
+[gd_scene load_steps=3 format=3 uid="uid://datsjrdo2jxg0"]
 
 [ext_resource type="Script" path="res://Levels/load_screen.gd" id="1_u6m0d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pytg4"]
-size = Vector2(190, 46)
+size = Vector2(190, 4)
 
 [node name="LoadScreen" type="Area2D"]
 monitoring = false
 script = ExtResource("1_u6m0d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 3)
+position = Vector2(-18, 2.99992)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_pytg4")
 
@@ -19,7 +19,7 @@ wait_time = 0.6
 one_shot = true
 
 [node name="WaitTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.3
 autostart = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

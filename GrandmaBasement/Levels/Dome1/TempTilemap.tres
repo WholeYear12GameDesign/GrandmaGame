@@ -1,6 +1,7 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dobir4kqibwk2"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://dobir4kqibwk2"]
 
 [ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="1_rwfup"]
+[ext_resource type="PackedScene" uid="uid://b5pi7ap08xsun" path="res://Objects/Spike.tscn" id="2_ghrm4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkr63"]
 texture = ExtResource("1_rwfup")
@@ -21,6 +22,10 @@ texture = ExtResource("1_rwfup")
 1:1/0/physics_layer_0/angular_velocity = 0.0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_oilmk"]
+scenes/1/scene = ExtResource("2_ghrm4")
+
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_tkr63")
+sources/2 = SubResource("TileSetScenesCollectionSource_oilmk")

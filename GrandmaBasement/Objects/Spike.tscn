@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5pi7ap08xsun"]
+
+[ext_resource type="Script" path="res://Objects/Spike.gd" id="1_fxe4c"]
+[ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="2_lnyq4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmtlt"]
+size = Vector2(16, 16)
+
+[node name="Spike" type="Area2D"]
+script = ExtResource("1_fxe4c")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_lnyq4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lmtlt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

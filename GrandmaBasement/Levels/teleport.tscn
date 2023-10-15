@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbn5nrx7d5gcf"]
+[gd_scene load_steps=4 format=3 uid="uid://bp5b1rp7njaor"]
 
 [ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="1_knvkx"]
 [ext_resource type="Script" path="res://Levels/teleport.gd" id="1_mslhv"]

@@ -1,7 +1,7 @@
 extends "state.gd"
 
 @onready var coyotetimer = $coyotetime
-@export var coyote_duration = 0.2
+var coyote_duration = 0.2
 var can_jump = true
 
 func update(delta):

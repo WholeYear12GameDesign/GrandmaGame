@@ -1,7 +1,7 @@
 extends "state.gd"
 
 @onready var jumptimer = $jumpholdtimer
-@export var jump_duration = 1
+var jump_duration = 1
 
 func update(delta):
 	player.fall(delta)

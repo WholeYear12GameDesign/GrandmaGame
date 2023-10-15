@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bfgkexhb4ho88"]
+[gd_scene load_steps=13 format=3 uid="uid://bfgkexhb4ho88"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_u67x1"]
 [ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="2_yvcg4"]
@@ -8,9 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://e5ygk6cqu02" path="res://Player/states/jetpack.tscn" id="6_gdjrt"]
 [ext_resource type="PackedScene" uid="uid://b2yicdenxhdc" path="res://Player/states/jump.tscn" id="7_o2y1s"]
 [ext_resource type="PackedScene" uid="uid://b3yjc6q22udw3" path="res://Player/states/walk.tscn" id="8_cufm2"]
+[ext_resource type="Script" path="res://Player/o2 bar/o2 bar.gd" id="9_tsq00"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6afm"]
 size = Vector2(128, 128)
+
+[sub_resource type="Gradient" id="Gradient_vc0u5"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ghyrw"]
+gradient = SubResource("Gradient_vc0u5")
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_u67x1")
@@ -40,3 +47,20 @@ script = ExtResource("3_477pk")
 [node name="jump" parent="states" instance=ExtResource("7_o2y1s")]
 
 [node name="walk" parent="states" instance=ExtResource("8_cufm2")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 53.0
+value = 100.0
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture1D_ghyrw")
+script = ExtResource("9_tsq00")

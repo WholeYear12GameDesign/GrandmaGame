@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6hxnxq0olw85"]
 
 [ext_resource type="TileSet" uid="uid://dobir4kqibwk2" path="res://Levels/Dome1/TempTilemap.tres" id="1_g7qx3"]
-[ext_resource type="PackedScene" uid="uid://datsjrdo2jxg0" path="res://Levels/load_screen.tscn" id="2_mad81"]
-[ext_resource type="PackedScene" uid="uid://bp5b1rp7njaor" path="res://Levels/teleport.tscn" id="3_v7p7d"]
+[ext_resource type="PackedScene" uid="uid://c7r6supcircgn" path="res://Levels/load_screen.tscn" id="2_mad81"]
+[ext_resource type="PackedScene" uid="uid://dbn5nrx7d5gcf" path="res://Levels/teleport.tscn" id="3_v7p7d"]
 
 [node name="Dome1Screen1" type="Node2D"]
 

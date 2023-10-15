@@ -29,7 +29,7 @@ func _ready():
 		state.states = states
 		state.player = self
 
-func _process(delta):
+func _physics_process(delta):
 	#debug please delete in future
 	$currentstate.text = str(current_state.name)
 	#print(velocity)
@@ -63,7 +63,6 @@ func _process(delta):
 	#oxygen
 	if !air:
 		player_data.oxygen -= delta
-		print(player_data.oxygen)
 	
 	change_state(current_state.update(delta))
 

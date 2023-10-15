@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bfgkexhb4ho88"]
+[gd_scene load_steps=11 format=3 uid="uid://bfgkexhb4ho88"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_u67x1"]
 [ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="2_yvcg4"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://e5ygk6cqu02" path="res://Player/states/jetpack.tscn" id="6_gdjrt"]
 [ext_resource type="PackedScene" uid="uid://b2yicdenxhdc" path="res://Player/states/jump.tscn" id="7_o2y1s"]
 [ext_resource type="PackedScene" uid="uid://b3yjc6q22udw3" path="res://Player/states/walk.tscn" id="8_cufm2"]
+[ext_resource type="Script" path="res://Player/oxygenbar.gd" id="9_vl05y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6afm"]
 size = Vector2(128, 128)
@@ -40,3 +41,12 @@ script = ExtResource("3_477pk")
 [node name="jump" parent="states" instance=ExtResource("7_o2y1s")]
 
 [node name="walk" parent="states" instance=ExtResource("8_cufm2")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 1079.0
+offset_right = 1147.0
+offset_bottom = 232.0
+fill_mode = 3
+script = ExtResource("9_vl05y")

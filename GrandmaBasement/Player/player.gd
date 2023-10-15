@@ -63,7 +63,6 @@ func _physics_process(delta):
 	#oxygen
 	if !air:
 		player_data.oxygen -= delta
-		print(player_data.oxygen)
 	
 	change_state(current_state.update(delta))
 

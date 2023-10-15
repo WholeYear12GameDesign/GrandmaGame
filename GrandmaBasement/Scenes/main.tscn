@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cr347vhwdt2pc"]
 
 [ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="1_ptrq7"]
-[ext_resource type="PackedScene" uid="uid://bp5b1rp7njaor" path="res://Levels/teleport.tscn" id="2_6olkp"]
+[ext_resource type="PackedScene" uid="uid://dbn5nrx7d5gcf" path="res://Levels/teleport.tscn" id="2_6olkp"]
 [ext_resource type="PackedScene" uid="uid://bfgkexhb4ho88" path="res://Player/player.tscn" id="3_l6r57"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkr63"]

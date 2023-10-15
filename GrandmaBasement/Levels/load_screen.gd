@@ -5,13 +5,13 @@ extends Area2D
 
 # switch to a diffrent screen/section of a dome using the path of the section
 func switch_screen(path):
-	$UnloadTimer.start()
+	set_deferred("monitoring", false)
 	var scene  = load(path)
 	var instance = scene.instantiate()
 	get_parent().get_parent().add_child(instance)
 	instance.global_position += get_parent().global_position + offset
 	get_parent().get_parent().get_node("Camera2D").global_position = instance.global_position
-	monitoring = false
+	$UnloadTimer.start()
 
 # runs switch_screen() when player collides with collision shape
 func _on_body_entered(body):
@@ -20,7 +20,7 @@ func _on_body_entered(body):
 
 # unload the screen after new one is loaded
 func UnloadTimer():
-	get_parent().queue_free()
+	get_parent().call_deferred("queue_free")
 
 # Makes door collidable after some time
 func WaitTimer():

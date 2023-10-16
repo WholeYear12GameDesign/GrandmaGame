@@ -32,7 +32,9 @@ func _ready():
 func _physics_process(delta):
 	#debug please delete in future
 	$currentstate.text = str(current_state.name)
-	#print(velocity)
+	if Input.is_action_just_pressed("free_oxygen"):
+		player_data.oxygen = 100
+	print(velocity)
 	
 	
 	move_and_slide()

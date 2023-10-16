@@ -17,8 +17,8 @@ var jetpack_input = false
 #other vars
 var gravity = 30
 var max_gravity = 10
-var speed = 60
-var jump_velocity = -12
+var speed = 20
+var jump_velocity = -10
 var max_speed = 30
 var air = false
 

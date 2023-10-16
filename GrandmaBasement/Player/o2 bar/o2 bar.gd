@@ -1,4 +1,4 @@
-extends TextureProgressBar
+extends ProgressBar
 
 const grad : Gradient = preload("res://Player/o2 bar/o2 gradient colour.tres")
 

@@ -17,8 +17,8 @@ var jetpack_input = false
 #other vars
 var gravity = 30
 var max_gravity = 10
-var speed = 20
-var jump_velocity = -10
+var speed = 60
+var jump_velocity = -12
 var max_speed = 30
 var air = false
 
@@ -29,12 +29,10 @@ func _ready():
 		state.states = states
 		state.player = self
 
-func _physics_process(delta):
+func _process(delta):
 	#debug please delete in future
 	$currentstate.text = str(current_state.name)
-	if Input.is_action_just_pressed("free_oxygen"):
-		player_data.oxygen = 100
-	print(velocity)
+	#print(velocity)
 	
 	
 	move_and_slide()
@@ -65,6 +63,7 @@ func _physics_process(delta):
 	#oxygen
 	if !air:
 		player_data.oxygen -= delta
+		print(player_data.oxygen)
 	
 	change_state(current_state.update(delta))
 

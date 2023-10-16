@@ -9,10 +9,5 @@ func load_level(path):
 # runs switch_screen() when player collides with collision shape
 func _on_body_entered(body):
 	if body.name == "Player":
-		get_parent().get_parent().close()
-		$Timer.start()
+		load_level(next_level)
 	
-
-
-func _on_timer_timeout():
-	load_level(next_level)

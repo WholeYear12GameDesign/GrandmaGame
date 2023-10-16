@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bfgkexhb4ho88"]
+[gd_scene load_steps=10 format=3 uid="uid://bfgkexhb4ho88"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_u67x1"]
 [ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="2_yvcg4"]
@@ -8,18 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://e5ygk6cqu02" path="res://Player/states/jetpack.tscn" id="6_gdjrt"]
 [ext_resource type="PackedScene" uid="uid://b2yicdenxhdc" path="res://Player/states/jump.tscn" id="7_o2y1s"]
 [ext_resource type="PackedScene" uid="uid://b3yjc6q22udw3" path="res://Player/states/walk.tscn" id="8_cufm2"]
-[ext_resource type="Script" path="res://Player/o2 bar/o2 bar.gd" id="9_tsq00"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6afm"]
 size = Vector2(128, 128)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jboak"]
-bg_color = Color(0, 0, 0, 0.207843)
-corner_radius_bottom_right = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8af7"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_bottom_right = 16
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_u67x1")

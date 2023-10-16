@@ -21,10 +21,19 @@ player_data="*res://Player/autoloads.gd"
 
 [display]
 
-window/size/viewport_width=1200
-window/size/viewport_height=650
-window/stretch/mode="viewport"
-window/stretch/aspect="expand"
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+
+[filesystem]
+
+import/blender/enabled=false
+
+[gui]
+
+theme/custom_font="res://Assets/PixelAE-Regular.ttf"
+theme/default_font_hinting=0
+theme/default_font_subpixel_positioning=3
 
 [input]
 

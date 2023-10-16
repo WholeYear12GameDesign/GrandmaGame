@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bfgkexhb4ho88"]
+[gd_scene load_steps=13 format=3 uid="uid://bfgkexhb4ho88"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_u67x1"]
 [ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="2_yvcg4"]
@@ -8,9 +8,20 @@
 [ext_resource type="PackedScene" uid="uid://e5ygk6cqu02" path="res://Player/states/jetpack.tscn" id="6_gdjrt"]
 [ext_resource type="PackedScene" uid="uid://b2yicdenxhdc" path="res://Player/states/jump.tscn" id="7_o2y1s"]
 [ext_resource type="PackedScene" uid="uid://b3yjc6q22udw3" path="res://Player/states/walk.tscn" id="8_cufm2"]
+[ext_resource type="Script" path="res://Player/o2 bar/o2 bar.gd" id="9_tsq00"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6afm"]
 size = Vector2(128, 128)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jboak"]
+bg_color = Color(0, 0, 0, 0.164706)
+corner_radius_bottom_right = 16
+anti_aliasing_size = 0.25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8af7"]
+bg_color = Color(1, 1, 1, 0.788235)
+corner_radius_bottom_right = 16
+anti_aliasing_size = 0.25
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_u67x1")
@@ -42,6 +53,7 @@ script = ExtResource("3_477pk")
 [node name="walk" parent="states" instance=ExtResource("8_cufm2")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_scale = 4.5
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -51,9 +63,30 @@ offset_bottom = 40.0
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control"]
 self_modulate = Color(0.0156863, 0.94902, 0, 1)
-layout_mode = 0
-offset_right = 256.0
-offset_bottom = 53.0
+custom_minimum_size = Vector2(256, 53)
+offset_left = 264.0
+offset_top = 256.0
+offset_right = 520.0
+offset_bottom = 309.0
+scale = Vector2(0.001, 1e-05)
+value = 50.0
+show_percentage = false
+script = ExtResource("9_tsq00")
+
+[node name="ProgressBar2" type="ProgressBar" parent="CanvasLayer/Control"]
+self_modulate = Color(0.0156863, 0.94902, 0, 1)
+custom_minimum_size = Vector2(256, 52)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 216.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+auto_translate = false
+localize_numeral_system = false
 theme_override_styles/background = SubResource("StyleBoxFlat_jboak")
 theme_override_styles/fill = SubResource("StyleBoxFlat_g8af7")
 value = 50.0
@@ -61,7 +94,6 @@ show_percentage = false
 script = ExtResource("9_tsq00")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
-layout_mode = 0
 offset_right = 256.0
 offset_bottom = 53.0
 theme_override_font_sizes/normal_font_size = 32
@@ -70,4 +102,6 @@ bbcode_enabled = true
 text = "[center][b]Oxygen[/b][/center]"
 scroll_active = false
 shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
 text_direction = 1

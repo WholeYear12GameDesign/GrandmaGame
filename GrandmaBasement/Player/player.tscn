@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bfgkexhb4ho88"]
+[gd_scene load_steps=15 format=3 uid="uid://bfgkexhb4ho88"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_u67x1"]
 [ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="2_yvcg4"]
@@ -12,6 +12,14 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6afm"]
 size = Vector2(128, 128)
+
+[sub_resource type="Gradient" id="Gradient_8tnot"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.356322)
+colors = PackedColorArray(0, 0, 0, 0.184314)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_04ymt"]
+gradient = SubResource("Gradient_8tnot")
 
 [sub_resource type="Gradient" id="Gradient_vc0u5"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -57,10 +65,24 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/Control"]
+self_modulate = Color(0.0156863, 0.94902, 0, 1)
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 53.0
-value = 100.0
+value = 68.0
 nine_patch_stretch = true
+texture_under = SubResource("GradientTexture1D_04ymt")
 texture_progress = SubResource("GradientTexture1D_ghyrw")
 script = ExtResource("9_tsq00")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 53.0
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "[shake rate=20.0 level=5][center][b]Oxygen[/b][/center][/shake]"
+scroll_active = false
+shortcut_keys_enabled = false
+text_direction = 1

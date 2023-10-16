@@ -16,3 +16,4 @@ position = Vector2(641, -83)
 rotation = -3.14159
 next_scene = "res://Levels/Dome1/Dome1Screen2.tscn"
 offset = Vector2(1152, 0)
+

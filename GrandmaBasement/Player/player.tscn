@@ -40,3 +40,34 @@ script = ExtResource("3_477pk")
 [node name="jump" parent="states" instance=ExtResource("7_o2y1s")]
 
 [node name="walk" parent="states" instance=ExtResource("8_cufm2")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control"]
+self_modulate = Color(0.0156863, 0.94902, 0, 1)
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 53.0
+theme_override_styles/background = SubResource("StyleBoxFlat_jboak")
+theme_override_styles/fill = SubResource("StyleBoxFlat_g8af7")
+value = 50.0
+show_percentage = false
+script = ExtResource("9_tsq00")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 53.0
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "[center][b]Oxygen[/b][/center]"
+scroll_active = false
+shortcut_keys_enabled = false
+text_direction = 1

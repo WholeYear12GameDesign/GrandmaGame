@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cr347vhwdt2pc"]
 
-[ext_resource type="Script" path="res://Levels/Dome1/Dome.gd" id="1_24epd"]
+[ext_resource type="Script" path="res://Levels/Dome.gd" id="1_24epd"]
 [ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="1_ptrq7"]
 [ext_resource type="PackedScene" uid="uid://dbn5nrx7d5gcf" path="res://Levels/teleport.tscn" id="2_6olkp"]
 [ext_resource type="PackedScene" uid="uid://dxcfpp5okoqaf" path="res://Player/player.tscn" id="3_l6r57"]

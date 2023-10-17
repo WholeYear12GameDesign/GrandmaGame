@@ -1,0 +1,12 @@
+For each level statt with making a scene called dome 1 or something similar and attach the Dome.gd script to it then place first screen and the other nodes that are found in the Dome_1 scene
+without these the levels will just not work
+
+When placing the load screen make sure it is around 30px away from the exit
+The offset is used to place the screen away from the current one and should only have the same values as the viewport resolution
+such as (1920,0) (0, -1080) (0,1080) one value should always be 0 becuase screens shouldnt be able to be placed diagonally
+
+add checkpoints at each exit of a screen so that the player wont have to restart from the start of the level
+make sure the screens are atleast a bit of a challenge otherwise the checkpoints will make it too easy to beat the game
+
+put the path of the screen in the next_scene value 
+in the final screen put a teleporter and put whatever scene you want the player to be teleported to

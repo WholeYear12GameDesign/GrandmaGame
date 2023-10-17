@@ -70,19 +70,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control"]
-self_modulate = Color(0.0156863, 0.94902, 0, 1)
-custom_minimum_size = Vector2(256, 53)
-layout_mode = 0
-offset_left = 264.0
-offset_top = 256.0
-offset_right = 520.0
-offset_bottom = 309.0
-scale = Vector2(0.001, 1e-05)
-value = 50.0
-show_percentage = false
-script = ExtResource("9_tsq00")
-
 [node name="ProgressBar2" type="ProgressBar" parent="CanvasLayer/Control"]
 self_modulate = Color(0.0156863, 0.94902, 0, 1)
 custom_minimum_size = Vector2(256, 52)

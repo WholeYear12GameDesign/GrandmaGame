@@ -12,6 +12,6 @@ func _process(_delta: float) -> void:
 	self_modulate = grad.sample(o2 / 100)
 	value = o2
 	if o2 < 25:
-		$"../RichTextLabel".text = "[shake rate=25.0 level=5.0][center][b]Oxygen[/b][/center][/shake]"
+		$"../ProgressBar2/RichTextLabel".text = "[shake rate=25.0 level=5.0][center][b]Oxygen[/b][/center][/shake]"
 	else:
-		$"../RichTextLabel".text = "[center][b]Oxygen[/b][/center]"
+		$"../ProgressBar2/RichTextLabel".text = "[center][b]Oxygen[/b][/center]"

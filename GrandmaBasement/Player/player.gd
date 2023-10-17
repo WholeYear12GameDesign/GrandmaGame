@@ -79,3 +79,6 @@ func change_state(input_state):
 func fall(delta):
 	if not is_on_floor() and velocity.y < max_gravity:
 		velocity.y += gravity * delta
+
+func retry():
+	global_position = player_data.checkpoint

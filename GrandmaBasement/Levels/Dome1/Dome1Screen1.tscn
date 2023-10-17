@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvty8n1cnto1q"]
+[gd_scene load_steps=4 format=3 uid="uid://cvty8n1cnto1q"]
 
 [ext_resource type="TileSet" uid="uid://dobir4kqibwk2" path="res://Tilemaps/TempTilemap.tres" id="1_xhrnl"]
 [ext_resource type="PackedScene" uid="uid://c7r6supcircgn" path="res://Levels/load_screen.tscn" id="2_863mw"]
+[ext_resource type="PackedScene" uid="uid://ct1e5cilqasa7" path="res://Objects/checkpoint.tscn" id="3_72khi"]
 
 [node name="Dome1Screen1" type="Node2D"]
 
@@ -17,34 +18,8 @@ rotation = -3.14159
 next_scene = "res://Levels/Dome1/Dome1Screen2.tscn"
 offset = Vector2(1920, 0)
 
-[connection signal="body_entered" from="TileMap/@Area2D@51413" to="TileMap/@Area2D@51413" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52046" to="TileMap/@Area2D@52046" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52047" to="TileMap/@Area2D@52047" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52048" to="TileMap/@Area2D@52048" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52049" to="TileMap/@Area2D@52049" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52050" to="TileMap/@Area2D@52050" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52051" to="TileMap/@Area2D@52051" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52052" to="TileMap/@Area2D@52052" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52053" to="TileMap/@Area2D@52053" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52054" to="TileMap/@Area2D@52054" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52055" to="TileMap/@Area2D@52055" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52056" to="TileMap/@Area2D@52056" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52057" to="TileMap/@Area2D@52057" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52058" to="TileMap/@Area2D@52058" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52059" to="TileMap/@Area2D@52059" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52060" to="TileMap/@Area2D@52060" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52061" to="TileMap/@Area2D@52061" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/Spike" to="TileMap/Spike" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52102" to="TileMap/@Area2D@52102" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52103" to="TileMap/@Area2D@52103" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52104" to="TileMap/@Area2D@52104" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52105" to="TileMap/@Area2D@52105" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52106" to="TileMap/@Area2D@52106" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52107" to="TileMap/@Area2D@52107" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52108" to="TileMap/@Area2D@52108" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52109" to="TileMap/@Area2D@52109" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52110" to="TileMap/@Area2D@52110" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52111" to="TileMap/@Area2D@52111" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52112" to="TileMap/@Area2D@52112" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52113" to="TileMap/@Area2D@52113" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@52114" to="TileMap/@Area2D@52114" method="_on_body_entered" flags=18]
+[node name="Checkpoint2" parent="." instance=ExtResource("3_72khi")]
+position = Vector2(538, -81)
+
+[node name="Checkpoint" parent="." instance=ExtResource("3_72khi")]
+position = Vector2(-510, -71)

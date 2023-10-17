@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dxcfpp5okoqaf"]
+[gd_scene load_steps=15 format=3 uid="uid://dxcfpp5okoqaf"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_u67x1"]
 [ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="2_yvcg4"]
@@ -23,6 +23,14 @@ anti_aliasing_size = 0.25
 bg_color = Color(1, 1, 1, 0.788235)
 corner_radius_bottom_right = 16
 anti_aliasing_size = 0.25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2lo70"]
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+border_blend = true
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_u67x1")
@@ -95,7 +103,7 @@ value = 50.0
 show_percentage = false
 script = ExtResource("9_tsq00")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/ProgressBar2"]
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 53.0
@@ -109,3 +117,15 @@ shortcut_keys_enabled = false
 meta_underlined = false
 hint_underlined = false
 text_direction = 1
+
+[node name="CurrentItem" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 854.0
+offset_right = 209.0
+offset_bottom = 1044.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2lo70")
+
+[node name="ItemSprite" type="Sprite2D" parent="CanvasLayer/Control/CurrentItem"]
+position = Vector2(88, 96)
+texture = ExtResource("2_yvcg4")

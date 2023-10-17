@@ -80,5 +80,9 @@ func fall(delta):
 	if not is_on_floor() and velocity.y < max_gravity:
 		velocity.y += gravity * delta
 
+#change the item the player is holding
+func update_item():
+	$CanvasLayer/Control/CurrentItem/ItemSprite.texture = null
+
 func retry():
 	global_position = player_data.checkpoint

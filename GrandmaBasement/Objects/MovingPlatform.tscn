@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://q2rgji5ruu7b"]
+
+[ext_resource type="Script" path="res://Objects/MovingPlatform.gd" id="1_8wmxl"]
+[ext_resource type="TileSet" uid="uid://dobir4kqibwk2" path="res://Tilemaps/TempTilemap.tres" id="2_2lumv"]
+
+[node name="MovingPlatform" type="Node2D"]
+position = Vector2(238, 96)
+script = ExtResource("1_8wmxl")
+pos1 = Vector2(-100, 50)
+pos2 = Vector2(150, -50)
+speed = 1
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-1, 0)
+tile_set = ExtResource("2_2lumv")
+format = 2
+layer_0/tile_data = PackedInt32Array(2, 327681, 2, -65534, 327681, 0, 1, 262145, 2, -65535, 131073, 3, 0, 262145, 2, -65536, 262145, 0, 65535, 262145, 2, -1, 262145, 0, 65534, 196609, 4, -2, 262145, 0, 65533, 196609, 2, -3, 196609, 0)

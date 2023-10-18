@@ -12,18 +12,11 @@
 [ext_resource type="Script" path="res://Player/o2 bar/o2 bar.gd" id="9_tsq00"]
 [ext_resource type="Texture2D" uid="uid://b7e3fpdc6e4fl" path="res://Art assets/Oxygen Tank.png" id="10_5opu0"]
 [ext_resource type="FontFile" uid="uid://bcl842aehi6gk" path="res://Art assets/PixelAE-Regular.ttf" id="10_aybem"]
+[ext_resource type="Theme" uid="uid://ddq2fmd52ybv6" path="res://Styles/BoxTheme.tres" id="10_nc8pa"]
 [ext_resource type="Texture2D" uid="uid://63u6x57hdpbx" path="res://Art assets/Oxygen.png" id="11_v6ddp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6afm"]
 size = Vector2(128, 128)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2lo70"]
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
-border_blend = true
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_u67x1")
@@ -65,11 +58,10 @@ offset_left = 30.0
 offset_top = 854.0
 offset_right = 209.0
 offset_bottom = 1044.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_2lo70")
+theme = ExtResource("10_nc8pa")
 
 [node name="ItemSprite" type="Sprite2D" parent="CanvasLayer/CurrentItem"]
 position = Vector2(88, 96)
-texture = ExtResource("2_yvcg4")
 
 [node name="oxygenbar" type="TextureProgressBar" parent="CanvasLayer"]
 offset_left = 1718.0

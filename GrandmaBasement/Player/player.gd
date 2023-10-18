@@ -36,7 +36,6 @@ func _physics_process(delta):
 	$currentstate.text = str(current_state.name)
 	if Input.is_action_just_pressed("free_oxygen"):
 		player_data.oxygen = 100
-	print(velocity)
 	
 	
 	move_and_slide()

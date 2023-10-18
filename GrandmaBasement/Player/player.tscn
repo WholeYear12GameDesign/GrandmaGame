@@ -85,15 +85,33 @@ script = ExtResource("9_tsq00")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/oxygenbar"]
 layout_mode = 0
-offset_left = -88.5
-offset_top = 31.5
-offset_right = -14.5
-offset_bottom = 84.5
+offset_left = 34.0
+offset_top = 41.0
+offset_right = 57.0
+offset_bottom = 94.0
 theme_override_fonts/bold_font = ExtResource("10_aybem")
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/bold_font_size = 32
 bbcode_enabled = true
-text = "[center][b]O2[/b][/center]"
+text = "[center][b]O[/b][/center]"
+scroll_active = false
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+text_direction = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/oxygenbar"]
+layout_mode = 0
+offset_left = 53.5
+offset_top = 59.0
+offset_right = 76.5
+offset_bottom = 102.0
+scale = Vector2(0.6, 0.6)
+theme_override_fonts/bold_font = ExtResource("10_aybem")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "[center][b]2[/b][/center]"
 scroll_active = false
 shortcut_keys_enabled = false
 meta_underlined = false

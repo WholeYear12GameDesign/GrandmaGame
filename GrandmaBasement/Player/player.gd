@@ -23,6 +23,7 @@ var max_speed = 30
 var air = false
 
 func _ready():
+	player_data.oxygen = 100
 	prev_state = states.idle
 	current_state = states.idle
 	for state in states.get_children():
@@ -30,11 +31,11 @@ func _ready():
 		state.player = self
 
 func _physics_process(delta):
+	$Sprite.modulate.h += 0.01
 	#debug please delete in future
 	$currentstate.text = str(current_state.name)
 	if Input.is_action_just_pressed("free_oxygen"):
 		player_data.oxygen = 100
-	print(velocity)
 	
 	
 	move_and_slide()
@@ -57,7 +58,7 @@ func _physics_process(delta):
 		jump_input_actuation = true
 	else:
 		jump_input_actuation = false
-	if Input.is_action_pressed("jetpack"):
+	if Input.is_action_just_pressed("jetpack"):
 		jetpack_input = true
 	else:
 		jetpack_input = false
@@ -79,3 +80,14 @@ func change_state(input_state):
 func fall(delta):
 	if not is_on_floor() and velocity.y < max_gravity:
 		velocity.y += gravity * delta
+
+#change the item the player is holding
+func update_items(item_name, item_icon):
+	player_data.current_item = item_name
+	if item_icon == "none":
+		$CanvasLayer/CurrentItem/ItemSprite.set_texture(null)
+	else:
+		$CanvasLayer/CurrentItem/ItemSprite.set_texture(load(item_icon))
+
+func retry():
+	global_position = player_data.checkpoint

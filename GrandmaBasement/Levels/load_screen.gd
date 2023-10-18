@@ -8,7 +8,7 @@ func switch_screen(path):
 	set_deferred("monitoring", false)
 	var scene  = load(path)
 	var instance = scene.instantiate()
-	get_parent().get_parent().add_child(instance)
+	get_parent().get_parent().call_deferred("add_child", instance)
 	instance.global_position += get_parent().global_position + offset
 	get_parent().get_parent().get_node("Camera2D").global_position = instance.global_position
 	$UnloadTimer.start()

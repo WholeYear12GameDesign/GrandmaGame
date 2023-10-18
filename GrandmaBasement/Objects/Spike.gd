@@ -9,4 +9,4 @@ func load_level(path):
 # runs switch_screen() when player collides with collision shape
 func _on_body_entered(body):
 	if body.name == "Player":
-		load_level(next_level)
+		body.retry()

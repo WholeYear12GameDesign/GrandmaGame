@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfgkexhb4ho88"]
+[gd_scene load_steps=16 format=3 uid="uid://dxcfpp5okoqaf"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_u67x1"]
 [ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="2_yvcg4"]
@@ -8,7 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://e5ygk6cqu02" path="res://Player/states/jetpack.tscn" id="6_gdjrt"]
 [ext_resource type="PackedScene" uid="uid://b2yicdenxhdc" path="res://Player/states/jump.tscn" id="7_o2y1s"]
 [ext_resource type="PackedScene" uid="uid://b3yjc6q22udw3" path="res://Player/states/walk.tscn" id="8_cufm2"]
-[ext_resource type="Script" path="res://Player/oxygenbar.gd" id="9_vl05y"]
+[ext_resource type="PackedScene" uid="uid://cswd5hfyh3lm6" path="res://Player/states/block.tscn" id="9_fcufl"]
+[ext_resource type="Script" path="res://Player/o2 bar/o2 bar.gd" id="9_tsq00"]
+[ext_resource type="Texture2D" uid="uid://b7e3fpdc6e4fl" path="res://Art assets/Oxygen Tank.png" id="10_5opu0"]
+[ext_resource type="FontFile" uid="uid://bcl842aehi6gk" path="res://Art assets/PixelAE-Regular.ttf" id="10_aybem"]
+[ext_resource type="Theme" uid="uid://ddq2fmd52ybv6" path="res://Styles/BoxTheme.tres" id="10_nc8pa"]
+[ext_resource type="Texture2D" uid="uid://63u6x57hdpbx" path="res://Art assets/Oxygen.png" id="11_v6ddp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6afm"]
 size = Vector2(128, 128)
@@ -17,6 +22,7 @@ size = Vector2(128, 128)
 script = ExtResource("1_u67x1")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
 texture = ExtResource("2_yvcg4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -42,11 +48,64 @@ script = ExtResource("3_477pk")
 
 [node name="walk" parent="states" instance=ExtResource("8_cufm2")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="block" parent="states" instance=ExtResource("9_fcufl")]
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-offset_left = 1079.0
-offset_right = 1147.0
-offset_bottom = 232.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_scale = 4.5
+
+[node name="CurrentItem" type="Panel" parent="CanvasLayer"]
+offset_left = 30.0
+offset_top = 854.0
+offset_right = 209.0
+offset_bottom = 1044.0
+theme = ExtResource("10_nc8pa")
+
+[node name="ItemSprite" type="Sprite2D" parent="CanvasLayer/CurrentItem"]
+position = Vector2(88, 96)
+
+[node name="oxygenbar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 1718.0
+offset_right = 1819.0
+offset_bottom = 112.0
+scale = Vector2(2, 2)
+value = 100.0
 fill_mode = 3
-script = ExtResource("9_vl05y")
+texture_under = ExtResource("10_5opu0")
+texture_progress = ExtResource("11_v6ddp")
+texture_progress_offset = Vector2(33, 12)
+script = ExtResource("9_tsq00")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/oxygenbar"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 41.0
+offset_right = 57.0
+offset_bottom = 94.0
+theme_override_fonts/bold_font = ExtResource("10_aybem")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "[center][b]O[/b][/center]"
+scroll_active = false
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+text_direction = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/oxygenbar"]
+layout_mode = 0
+offset_left = 53.5
+offset_top = 59.0
+offset_right = 76.5
+offset_bottom = 102.0
+scale = Vector2(0.6, 0.6)
+theme_override_fonts/bold_font = ExtResource("10_aybem")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "[center][b]2[/b][/center]"
+scroll_active = false
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+text_direction = 1

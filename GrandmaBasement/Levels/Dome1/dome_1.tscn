@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://bko50kji0lg6b"]
 
 [ext_resource type="PackedScene" uid="uid://cvty8n1cnto1q" path="res://Levels/Dome1/Dome1Screen1.tscn" id="1_b7x1n"]
-[ext_resource type="Script" path="res://Levels/Dome1/Dome.gd" id="1_gcqjg"]
-[ext_resource type="PackedScene" uid="uid://bfgkexhb4ho88" path="res://Player/player.tscn" id="2_ojb66"]
+[ext_resource type="Script" path="res://Levels/Dome.gd" id="1_s8f27"]
+[ext_resource type="PackedScene" uid="uid://dxcfpp5okoqaf" path="res://Player/player.tscn" id="2_ojb66"]
 [ext_resource type="Script" path="res://Player/Camera2D.gd" id="3_8oosb"]
 
 [sub_resource type="Animation" id="Animation_flnnt"]
@@ -58,7 +58,7 @@ _data = {
 }
 
 [node name="Dome1" type="Node2D"]
-script = ExtResource("1_gcqjg")
+script = ExtResource("1_s8f27")
 
 [node name="Dome1Screen1" parent="." instance=ExtResource("1_b7x1n")]
 

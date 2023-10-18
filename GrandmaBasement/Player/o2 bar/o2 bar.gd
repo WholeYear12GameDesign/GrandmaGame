@@ -1,4 +1,4 @@
-extends ProgressBar
+extends TextureProgressBar
 
 const grad : Gradient = preload("res://Player/o2 bar/o2 gradient colour.tres")
 
@@ -9,9 +9,9 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	var o2 : float = player_data.oxygen
-	self_modulate = grad.sample(o2 / 100)
+	tint_progress = grad.sample(o2 / 100)
 	value = o2
 	if o2 < 25:
-		$RichTextLabel.text = "[shake rate=25.0 level=5.0][center][b]O2[/b][/center][/shake]"
+		$RichTextLabel.text = "[shake rate=25.0 level=5.0][center][b]O[sub]2[/sub][/b][/center][/shake]"
 	else:
-		$RichTextLabel.text = "[center][b]O2[/b][/center]"
+		$RichTextLabel.text = "[center][b]O[sub]{2}[/sub][/b][/center]"

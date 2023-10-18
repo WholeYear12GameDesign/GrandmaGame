@@ -10,20 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://b3yjc6q22udw3" path="res://Player/states/walk.tscn" id="8_cufm2"]
 [ext_resource type="PackedScene" uid="uid://cswd5hfyh3lm6" path="res://Player/states/block.tscn" id="9_fcufl"]
 [ext_resource type="Script" path="res://Player/o2 bar/o2 bar.gd" id="9_tsq00"]
+[ext_resource type="Texture2D" uid="uid://b7e3fpdc6e4fl" path="res://Art assets/Oxygen Tank.png" id="10_5opu0"]
 [ext_resource type="FontFile" uid="uid://bcl842aehi6gk" path="res://Art assets/PixelAE-Regular.ttf" id="10_aybem"]
+[ext_resource type="Texture2D" uid="uid://63u6x57hdpbx" path="res://Art assets/Oxygen.png" id="11_v6ddp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6afm"]
 size = Vector2(128, 128)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jboak"]
-bg_color = Color(0, 0, 0, 0.164706)
-corner_radius_bottom_right = 16
-anti_aliasing_size = 0.25
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8af7"]
-bg_color = Color(1, 1, 1, 0.788235)
-corner_radius_bottom_right = 16
-anti_aliasing_size = 0.25
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2lo70"]
 border_width_left = 10
@@ -68,46 +60,6 @@ script = ExtResource("3_477pk")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_scale = 4.5
 
-[node name="oxygenbar" type="ProgressBar" parent="CanvasLayer"]
-self_modulate = Color(0.0156863, 0.94902, 0, 1)
-custom_minimum_size = Vector2(256, 52)
-layout_direction = 2
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1920.0
-offset_right = 256.0
-offset_bottom = -1006.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 1.5708
-auto_translate = false
-localize_numeral_system = false
-theme_override_styles/background = SubResource("StyleBoxFlat_jboak")
-theme_override_styles/fill = SubResource("StyleBoxFlat_g8af7")
-value = 50.0
-fill_mode = 1
-show_percentage = false
-script = ExtResource("9_tsq00")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/oxygenbar"]
-layout_mode = 0
-offset_left = 108.0
-offset_top = 73.0
-offset_right = 182.0
-offset_bottom = 126.0
-rotation = -1.5708
-theme_override_fonts/bold_font = ExtResource("10_aybem")
-theme_override_font_sizes/normal_font_size = 32
-theme_override_font_sizes/bold_font_size = 32
-bbcode_enabled = true
-text = "[center][b]O2[/b][/center]"
-scroll_active = false
-shortcut_keys_enabled = false
-meta_underlined = false
-hint_underlined = false
-text_direction = 1
-
 [node name="CurrentItem" type="Panel" parent="CanvasLayer"]
 offset_left = 30.0
 offset_top = 854.0
@@ -118,3 +70,32 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2lo70")
 [node name="ItemSprite" type="Sprite2D" parent="CanvasLayer/CurrentItem"]
 position = Vector2(88, 96)
 texture = ExtResource("2_yvcg4")
+
+[node name="oxygenbar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 1718.0
+offset_right = 1819.0
+offset_bottom = 112.0
+scale = Vector2(2, 2)
+value = 100.0
+fill_mode = 3
+texture_under = ExtResource("10_5opu0")
+texture_progress = ExtResource("11_v6ddp")
+texture_progress_offset = Vector2(33, 12)
+script = ExtResource("9_tsq00")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/oxygenbar"]
+layout_mode = 0
+offset_left = -88.5
+offset_top = 31.5
+offset_right = -14.5
+offset_bottom = 84.5
+theme_override_fonts/bold_font = ExtResource("10_aybem")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "[center][b]O2[/b][/center]"
+scroll_active = false
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+text_direction = 1

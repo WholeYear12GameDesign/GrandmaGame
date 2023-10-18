@@ -83,8 +83,9 @@ func fall(delta):
 		velocity.y += gravity * delta
 
 #change the item the player is holding
-func update_item():
-	$CanvasLayer/Control/CurrentItem/ItemSprite.texture = null
+func update_item(item_name, item_icon):
+	player_data.current_item = item_name
+	$CanvasLayer/Control/CurrentItem/ItemSprite.texture = item_icon
 
 func retry():
 	global_position = player_data.checkpoint

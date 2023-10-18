@@ -21,6 +21,7 @@ var speed = 20
 var jump_velocity = -10
 var max_speed = 30
 var air = false
+var okh : float = 0.0
 
 func _ready():
 	player_data.oxygen = 100
@@ -31,7 +32,11 @@ func _ready():
 		state.player = self
 
 func _physics_process(delta):
-	$Sprite.modulate.h += 0.01
+	if okh > 1:
+		okh = 0
+	else:
+		okh += 0.01
+	$Sprite.modulate = Color.from_ok_hsl(okh, 1, 0.75, 1)
 	#debug please delete in future
 	$currentstate.text = str(current_state.name)
 	if Input.is_action_just_pressed("free_oxygen"):

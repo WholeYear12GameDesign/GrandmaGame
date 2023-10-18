@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dxcfpp5okoqaf"]
+[gd_scene load_steps=16 format=3 uid="uid://dxcfpp5okoqaf"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_u67x1"]
 [ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="2_yvcg4"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://e5ygk6cqu02" path="res://Player/states/jetpack.tscn" id="6_gdjrt"]
 [ext_resource type="PackedScene" uid="uid://b2yicdenxhdc" path="res://Player/states/jump.tscn" id="7_o2y1s"]
 [ext_resource type="PackedScene" uid="uid://b3yjc6q22udw3" path="res://Player/states/walk.tscn" id="8_cufm2"]
+[ext_resource type="PackedScene" uid="uid://cswd5hfyh3lm6" path="res://Player/states/block.tscn" id="9_fcufl"]
 [ext_resource type="Script" path="res://Player/o2 bar/o2 bar.gd" id="9_tsq00"]
 [ext_resource type="FontFile" uid="uid://bcl842aehi6gk" path="res://Art assets/PixelAE-Regular.ttf" id="10_aybem"]
 
@@ -36,6 +37,7 @@ border_blend = true
 script = ExtResource("1_u67x1")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
 texture = ExtResource("2_yvcg4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -61,58 +63,58 @@ script = ExtResource("3_477pk")
 
 [node name="walk" parent="states" instance=ExtResource("8_cufm2")]
 
+[node name="block" parent="states" instance=ExtResource("9_fcufl")]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_scale = 4.5
 
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ProgressBar2" type="ProgressBar" parent="CanvasLayer/Control"]
+[node name="oxygenbar" type="ProgressBar" parent="CanvasLayer"]
 self_modulate = Color(0.0156863, 0.94902, 0, 1)
 custom_minimum_size = Vector2(256, 52)
 layout_direction = 2
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 216.0
-offset_bottom = 12.0
+offset_left = 1920.0
+offset_right = 256.0
+offset_bottom = -1006.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 1.5708
 auto_translate = false
 localize_numeral_system = false
 theme_override_styles/background = SubResource("StyleBoxFlat_jboak")
 theme_override_styles/fill = SubResource("StyleBoxFlat_g8af7")
 value = 50.0
+fill_mode = 1
 show_percentage = false
 script = ExtResource("9_tsq00")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/ProgressBar2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/oxygenbar"]
 layout_mode = 0
-offset_right = 256.0
-offset_bottom = 53.0
+offset_left = 108.0
+offset_top = 73.0
+offset_right = 182.0
+offset_bottom = 126.0
+rotation = -1.5708
 theme_override_fonts/bold_font = ExtResource("10_aybem")
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/bold_font_size = 32
 bbcode_enabled = true
-text = "[center][b]Oxygen[/b][/center]"
+text = "[center][b]O2[/b][/center]"
 scroll_active = false
 shortcut_keys_enabled = false
 meta_underlined = false
 hint_underlined = false
 text_direction = 1
 
-[node name="CurrentItem" type="Panel" parent="CanvasLayer/Control"]
-layout_mode = 0
+[node name="CurrentItem" type="Panel" parent="CanvasLayer"]
 offset_left = 30.0
 offset_top = 854.0
 offset_right = 209.0
 offset_bottom = 1044.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_2lo70")
 
-[node name="ItemSprite" type="Sprite2D" parent="CanvasLayer/Control/CurrentItem"]
+[node name="ItemSprite" type="Sprite2D" parent="CanvasLayer/CurrentItem"]
 position = Vector2(88, 96)
 texture = ExtResource("2_yvcg4")

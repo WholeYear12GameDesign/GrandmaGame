@@ -4,3 +4,8 @@
 
 [node name="jetpack" type="Node"]
 script = ExtResource("1_srjcg")
+
+[node name="jetpacktimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="jetpacktimer" to="." method="_on_jetpacktimer_timeout"]

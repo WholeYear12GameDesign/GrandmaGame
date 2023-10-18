@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://blqc1yhd1fl5h"]
+[gd_scene load_steps=5 format=3 uid="uid://blqc1yhd1fl5h"]
 
 [ext_resource type="TileSet" uid="uid://dobir4kqibwk2" path="res://Tilemaps/TempTilemap.tres" id="1_411da"]
 [ext_resource type="PackedScene" uid="uid://ct1e5cilqasa7" path="res://Objects/checkpoint.tscn" id="2_hfbvm"]
 [ext_resource type="PackedScene" uid="uid://c7r6supcircgn" path="res://Levels/load_screen.tscn" id="2_vdok0"]
+[ext_resource type="PackedScene" uid="uid://q2rgji5ruu7b" path="res://Objects/MovingPlatform.tscn" id="4_o5mv4"]
 
 [node name="Dome1Screen1" type="Node2D"]
 metadata/_edit_horizontal_guides_ = []
@@ -56,3 +57,9 @@ layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(65515, 131073, 5, 65514, 65537, 5, 65513, 65537, 5, 65512, 1, 5, 655336, 524289, 5, 589800, 524289, 4, 655335, 458753, 5, 589799, 458753, 4, 655334, 393217, 5, 589798, 393217, 4, 786422, 524289, 5, 720886, 524289, 4, 786421, 458753, 5, 720885, 458753, 4, 786420, 393217, 5, 720884, 393217, 4, 851970, 524289, 5, 786434, 524289, 4, 851969, 393217, 5, 786433, 393217, 4, 786447, 524289, 5, 720911, 524289, 4, 786446, 458753, 5, 720910, 458753, 4, 786445, 458753, 5, 720909, 458753, 4, 786444, 458753, 5, 720908, 458753, 4, 786443, 393217, 5, 720907, 393217, 4, 327703, 524289, 5, 262167, 524289, 4, 327702, 393217, 5, 262166, 393217, 4, -720876, 524289, 4, -720877, 393217, 4, -655340, 524289, 5, -655341, 393217, 5, -917478, 458753, 5, -983014, 458753, 4, -917479, 393217, 5, -983015, 393217, 4, -917477, 524289, 5, -983013, 524289, 4, -917497, 524289, 5, -983033, 524289, 4, -917498, 393217, 5, -983034, 393217, 4, -720918, 524289, 5, -786454, 524289, 4, -720919, 393217, 5, -786455, 393217, 4, -851979, 524289, 5, -917515, 524289, 4, -851980, 393217, 5, -917516, 393217, 4)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("4_o5mv4")]
+position = Vector2(-9, -137)
+pos1 = Vector2(-450, 0)
+pos2 = Vector2(450, 0)
+speed = 0.0

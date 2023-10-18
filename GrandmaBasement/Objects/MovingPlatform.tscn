@@ -1,16 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://q2rgji5ruu7b"]
+[gd_scene load_steps=4 format=3 uid="uid://q2rgji5ruu7b"]
 
 [ext_resource type="Script" path="res://Objects/MovingPlatform.gd" id="1_8wmxl"]
 [ext_resource type="TileSet" uid="uid://dobir4kqibwk2" path="res://Tilemaps/TempTilemap.tres" id="2_2lumv"]
 
+[sub_resource type="Curve2D" id="Curve2D_cq2of"]
+
 [node name="MovingPlatform" type="Node2D"]
-position = Vector2(238, 96)
 script = ExtResource("1_8wmxl")
-pos1 = Vector2(-100, 50)
-pos2 = Vector2(150, -50)
 speed = 1
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_cq2of")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(2, 0)
+rotates = false
+loop = false
+
+[node name="TileMap" type="TileMap" parent="Path2D/PathFollow2D"]
 position = Vector2(-1, 0)
 tile_set = ExtResource("2_2lumv")
 format = 2

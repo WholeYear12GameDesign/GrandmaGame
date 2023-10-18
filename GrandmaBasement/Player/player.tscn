@@ -117,4 +117,3 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2lo70")
 
 [node name="ItemSprite" type="Sprite2D" parent="CanvasLayer/CurrentItem"]
 position = Vector2(88, 96)
-texture = ExtResource("2_yvcg4")

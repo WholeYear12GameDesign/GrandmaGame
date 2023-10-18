@@ -85,7 +85,10 @@ func fall(delta):
 #change the item the player is holding
 func update_item(item_name, item_icon):
 	player_data.current_item = item_name
-	$CanvasLayer/Control/CurrentItem/ItemSprite.texture = item_icon
+	if item_icon == "none":
+		$CanvasLayer/CurrentItem/ItemSprite.set_texture(null)
+	else:
+		$CanvasLayer/CurrentItem/ItemSprite.set_texture(load(item_icon))
 
 func retry():
 	global_position = player_data.checkpoint

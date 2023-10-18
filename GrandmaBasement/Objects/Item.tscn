@@ -7,9 +7,14 @@ script/source = "extends Area2D
 @export var item_icon = \"\"
 
 
+func _ready():
+	$Sprite2D.texture = load(item_icon)
+
+
 func _on_body_entered(body):
 	if body.name == \"Player\":
 		body.update_item(item_name, item_icon)
+		queue_free()
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w31j2"]
@@ -19,5 +24,7 @@ script = SubResource("GDScript_2or84")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_w31j2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

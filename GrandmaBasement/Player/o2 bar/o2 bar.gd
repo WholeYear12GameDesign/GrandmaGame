@@ -14,4 +14,4 @@ func _process(_delta: float) -> void:
 	if o2 < 25:
 		$RichTextLabel.text = "[shake rate=25.0 level=5.0][center][b]O[sub]2[/sub][/b][/center][/shake]"
 	else:
-		$RichTextLabel.text = "[center][b]O[sub]{2}[/sub][/b][/center]"
+		$RichTextLabel.text = "[center][b]O[sub]2[/sub][/b][/center]"

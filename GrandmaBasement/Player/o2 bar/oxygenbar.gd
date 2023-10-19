@@ -1,4 +1,4 @@
 extends ProgressBar
 
 func _process(delta):
-	value = player_data.oxygen
+	value = player_data.tank1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dxcfpp5okoqaf"]
+[gd_scene load_steps=19 format=3 uid="uid://dxcfpp5okoqaf"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_u67x1"]
 [ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="2_yvcg4"]
@@ -14,6 +14,9 @@
 [ext_resource type="FontFile" uid="uid://bcl842aehi6gk" path="res://Art assets/PixelAE-Regular.ttf" id="10_aybem"]
 [ext_resource type="Theme" uid="uid://ddq2fmd52ybv6" path="res://Styles/BoxTheme.tres" id="10_nc8pa"]
 [ext_resource type="Texture2D" uid="uid://63u6x57hdpbx" path="res://Art assets/Oxygen.png" id="11_v6ddp"]
+[ext_resource type="Texture2D" uid="uid://cwnfxk48p0dwh" path="res://Art assets/Oxygen Tank x2.png" id="15_aatiu"]
+[ext_resource type="Script" path="res://Player/o2 bar/oxygenbar2.gd" id="16_qxjyf"]
+[ext_resource type="Script" path="res://Player/o2 bar/oxygenbar3.gd" id="17_l3vup"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6afm"]
 size = Vector2(128, 128)
@@ -63,6 +66,14 @@ theme = ExtResource("10_nc8pa")
 [node name="ItemSprite" type="Sprite2D" parent="CanvasLayer/CurrentItem"]
 position = Vector2(88, 96)
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 316.0
+offset_top = 365.0
+offset_right = 493.0
+offset_bottom = 505.0
+theme_override_font_sizes/font_size = 100
+text = "agh"
+
 [node name="oxygenbar" type="TextureProgressBar" parent="CanvasLayer"]
 offset_left = 1718.0
 offset_right = 1819.0
@@ -77,33 +88,71 @@ script = ExtResource("9_tsq00")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/oxygenbar"]
 layout_mode = 0
-offset_left = 34.0
-offset_top = 41.0
-offset_right = 57.0
-offset_bottom = 94.0
+offset_left = 46.0
+offset_top = 14.0
+offset_right = 56.0
+offset_bottom = 105.0
 theme_override_fonts/bold_font = ExtResource("10_aybem")
 theme_override_font_sizes/normal_font_size = 32
-theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/bold_font_size = 10
 bbcode_enabled = true
-text = "[center][b]O[/b][/center]"
+text = "[center][b]OXYGEN[/b][/center]"
 scroll_active = false
 shortcut_keys_enabled = false
 meta_underlined = false
 hint_underlined = false
 text_direction = 1
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/oxygenbar"]
+[node name="oxygenbar2" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 1718.0
+offset_right = 1819.0
+offset_bottom = 112.0
+scale = Vector2(2, 2)
+value = 100.0
+fill_mode = 3
+texture_under = ExtResource("15_aatiu")
+texture_progress = ExtResource("11_v6ddp")
+texture_progress_offset = Vector2(8, 12)
+script = ExtResource("16_qxjyf")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/oxygenbar2"]
 layout_mode = 0
-offset_left = 53.5
-offset_top = 59.0
-offset_right = 76.5
-offset_bottom = 102.0
-scale = Vector2(0.6, 0.6)
+offset_left = 22.0
+offset_top = 17.0
+offset_right = 30.0
+offset_bottom = 104.0
+theme_override_fonts/bold_font = ExtResource("10_aybem")
+theme_override_font_sizes/bold_font_size = 10
+bbcode_enabled = true
+text = "[center][b]OXYGEN[/b][/center]"
+scroll_active = false
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+text_direction = 1
+
+[node name="oxygenbar3" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 1718.0
+offset_right = 1819.0
+offset_bottom = 112.0
+scale = Vector2(2, 2)
+value = 100.0
+fill_mode = 3
+texture_progress = ExtResource("11_v6ddp")
+texture_progress_offset = Vector2(58, 12)
+script = ExtResource("17_l3vup")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/oxygenbar3"]
+layout_mode = 0
+offset_left = 70.5
+offset_top = 15.5
+offset_right = 80.5
+offset_bottom = 102.5
 theme_override_fonts/bold_font = ExtResource("10_aybem")
 theme_override_font_sizes/normal_font_size = 32
-theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/bold_font_size = 10
 bbcode_enabled = true
-text = "[center][b]2[/b][/center]"
+text = "[center][b]OXYGEN[/b][/center]"
 scroll_active = false
 shortcut_keys_enabled = false
 meta_underlined = false

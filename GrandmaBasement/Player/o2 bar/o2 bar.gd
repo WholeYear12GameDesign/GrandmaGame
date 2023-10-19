@@ -1,19 +1,27 @@
 extends TextureProgressBar
 
 const grad : Gradient = preload("res://Player/o2 bar/o2 gradient colour.tres")
+var array = 0
 
 func _ready() -> void:
-	#if name == "ProgressBar":
-	#	queue_free()
-	pass
+	
+	if player_data.tanks[0] == "NONE" and player_data.tanks[1] == "NONE":
+		hide()
+	elif player_data.tanks[0] != "NONE" and player_data.tanks[1] != "NONE":
+		hide()
+	elif player_data.tanks[0] != "NONE":
+		show()
+		array = 0
+	elif player_data.tanks[1] != "NONE":
+		show()
+		array = 1
+	$"../Label".text = str(player_data.tanks[0],"  ",player_data.tanks[1])
 
 func _process(_delta: float) -> void:
-	var o2 : float = player_data.oxygen
+	var o2 : float = player_data.tank1
 	tint_progress = grad.sample(o2 / 100)
 	value = o2
 	if o2 < 25:
-		$RichTextLabel.text = "[shake rate=25.0 level=5.0][center][b]O[/b][/center][/shake]"
-		$RichTextLabel2.text = "[shake rate=25.0 level=5.0][center][b]2[/b][/center][/shake]"
+		$RichTextLabel.text = str("[shake rate=25.0 level=5.0][center][b]",player_data.tanks[array],"[/b][/center][/shake]")
 	else:
-		$RichTextLabel.text = "[center][b]O[/b][/center]"
-		$RichTextLabel2.text = "[center][b]2[/b][/center]"
+		$RichTextLabel.text = str("[center][b]",player_data.tanks[array],"[/b][/center]")

@@ -23,7 +23,7 @@ var max_speed = 30
 var air = false
 
 func _ready():
-	player_data.oxygen = 100
+	player_data.tank1 = 100
 	prev_state = states.idle
 	current_state = states.idle
 	for state in states.get_children():
@@ -31,11 +31,13 @@ func _ready():
 		state.player = self
 
 func _physics_process(delta):
-	$Sprite.modulate.h += 0.01
 	#debug please delete in future
+	$Sprite.modulate.h += 0.01
 	$currentstate.text = str(current_state.name)
 	if Input.is_action_just_pressed("free_oxygen"):
-		player_data.oxygen = 100
+		player_data.tank1 = 100
+	if Input.is_action_just_pressed("pause"):
+		get_tree().change_scene_to_file("res://Player/changetanks.tscn")
 	
 	
 	move_and_slide()
@@ -65,7 +67,7 @@ func _physics_process(delta):
 	
 	#oxygen
 	if !air:
-		player_data.oxygen -= delta
+		player_data.tank1 -= delta
 	
 	change_state(current_state.update(delta))
 

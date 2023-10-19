@@ -6,10 +6,13 @@
 [sub_resource type="Curve2D" id="Curve2D_cq2of"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mv5hv"]
-size = Vector2(90, 4)
+size = Vector2(12, 4)
 
 [node name="MovingPlatform" type="Node2D"]
 script = ExtResource("1_8wmxl")
+pos1 = null
+pos2 = null
+speed = null
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_cq2of")

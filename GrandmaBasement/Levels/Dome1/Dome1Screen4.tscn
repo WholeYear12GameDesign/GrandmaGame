@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://dobir4kqibwk2" path="res://Tilemaps/TempTilemap.tres" id="1_1prdh"]
 [ext_resource type="PackedScene" uid="uid://ct1e5cilqasa7" path="res://Objects/checkpoint.tscn" id="2_4nsl0"]
-[ext_resource type="PackedScene" uid="uid://c7r6supcircgn" path="res://Levels/load_screen.tscn" id="2_481er"]
+[ext_resource type="PackedScene" uid="uid://datsjrdo2jxg0" path="res://Levels/load_screen.tscn" id="2_481er"]
 [ext_resource type="PackedScene" uid="uid://dgxl7y5l0ninl" path="res://NPC/TestNPC.tscn" id="4_33vj5"]
 [ext_resource type="PackedScene" uid="uid://cwnelmjvqu2nm" path="res://Objects/Item.tscn" id="5_54f0v"]
 

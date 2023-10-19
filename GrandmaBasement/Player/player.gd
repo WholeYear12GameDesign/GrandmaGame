@@ -21,6 +21,7 @@ var speed = 20
 var jump_velocity = -10
 var max_speed = 30
 var air = false
+var okh : float = 0.0
 
 func _ready():
 	player_data.tank1 = 100
@@ -67,7 +68,13 @@ func _physics_process(delta):
 	
 	#oxygen
 	if !air:
-		player_data.tank1 -= delta
+		if player_data.tanks[0] == "OXYGEN":
+			player_data.tank1 -= delta
+			if player_data.tank1 <= 0 and player_data.tanks[1] == "OXYGEN":
+				player_data.tank2 -= delta
+		elif player_data.tanks[1] == "OXYGEN":
+			player_data.tank2 -= delta
+		
 	
 	change_state(current_state.update(delta))
 

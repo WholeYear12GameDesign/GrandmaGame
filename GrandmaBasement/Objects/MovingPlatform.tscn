@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://q2rgji5ruu7b"]
+[gd_scene load_steps=5 format=3 uid="uid://q2rgji5ruu7b"]
 
 [ext_resource type="Script" path="res://Objects/MovingPlatform.gd" id="1_8wmxl"]
 [ext_resource type="TileSet" uid="uid://dobir4kqibwk2" path="res://Tilemaps/TempTilemap.tres" id="2_2lumv"]
 
 [sub_resource type="Curve2D" id="Curve2D_cq2of"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv5hv"]
+size = Vector2(12, 4)
+
 [node name="MovingPlatform" type="Node2D"]
 script = ExtResource("1_8wmxl")
-speed = 1
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_cq2of")
@@ -16,6 +18,13 @@ curve = SubResource("Curve2D_cq2of")
 position = Vector2(2, 0)
 rotates = false
 loop = false
+
+[node name="PlayerOn" type="Area2D" parent="Path2D/PathFollow2D"]
+position = Vector2(-2, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/PlayerOn"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_mv5hv")
 
 [node name="TileMap" type="TileMap" parent="Path2D/PathFollow2D"]
 position = Vector2(-1, 0)

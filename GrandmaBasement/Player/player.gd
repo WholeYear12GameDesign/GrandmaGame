@@ -13,6 +13,7 @@ var movement_input = Vector2.ZERO
 var jump_input = false
 var jump_input_actuation = false
 var jetpack_input = false
+var jetpack_hold = false
 
 #other vars
 var gravity = 30
@@ -67,6 +68,10 @@ func _physics_process(delta):
 		jetpack_input = true
 	else:
 		jetpack_input = false
+	if Input.is_action_pressed("jetpack"):
+		jetpack_hold = true
+	else:
+		jetpack_hold = false
 	
 	#oxygen
 	if !air:

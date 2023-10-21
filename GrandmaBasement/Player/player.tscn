@@ -34,10 +34,11 @@ texture = ExtResource("2_yvcg4")
 shape = SubResource("RectangleShape2D_c6afm")
 
 [node name="currentstate" type="Label" parent="."]
-offset_left = -19.0
-offset_top = -107.0
-offset_right = 21.0
-offset_bottom = -81.0
+offset_left = -112.0
+offset_top = -162.0
+offset_right = 131.0
+offset_bottom = -22.0
+theme_override_font_sizes/font_size = 100
 text = "state"
 
 [node name="states" type="Node" parent="."]

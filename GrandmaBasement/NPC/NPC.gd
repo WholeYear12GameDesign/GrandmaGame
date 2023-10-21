@@ -12,4 +12,4 @@ func _on_give_item_body_entered(body):
 			like_list.append(like_list.find(player_data.current_item))
 			body.update_items("none", "none") 
 		if given_items >= req_items:
-			print("got all items yay")
+			#print("got all items yay")

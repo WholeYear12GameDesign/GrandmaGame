@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dxcfpp5okoqaf"]
+[gd_scene load_steps=21 format=3 uid="uid://dxcfpp5okoqaf"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_u67x1"]
 [ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="2_yvcg4"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://e5ygk6cqu02" path="res://Player/states/jetpack.tscn" id="6_gdjrt"]
 [ext_resource type="PackedScene" uid="uid://b2yicdenxhdc" path="res://Player/states/jump.tscn" id="7_o2y1s"]
 [ext_resource type="PackedScene" uid="uid://b3yjc6q22udw3" path="res://Player/states/walk.tscn" id="8_cufm2"]
-[ext_resource type="PackedScene" path="res://Player/states/block.tscn" id="9_fcufl"]
+[ext_resource type="PackedScene" uid="uid://cswd5hfyh3lm6" path="res://Player/states/block.tscn" id="9_fcufl"]
 [ext_resource type="Script" path="res://Player/o2 bar/o2 bar.gd" id="9_tsq00"]
 [ext_resource type="Texture2D" uid="uid://b7e3fpdc6e4fl" path="res://Art assets/Oxygen Tank.png" id="10_5opu0"]
 [ext_resource type="FontFile" uid="uid://bcl842aehi6gk" path="res://Art assets/PixelAE-Regular.ttf" id="10_aybem"]
@@ -16,7 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://63u6x57hdpbx" path="res://Art assets/Oxygen.png" id="11_v6ddp"]
 [ext_resource type="Texture2D" uid="uid://cwnfxk48p0dwh" path="res://Art assets/Oxygen Tank x2.png" id="15_aatiu"]
 [ext_resource type="Script" path="res://Player/o2 bar/oxygenbar2.gd" id="16_qxjyf"]
+[ext_resource type="Texture2D" uid="uid://6og5wpwasvbo" path="res://Art assets/Oxygen Tank Outline-1.png" id="16_vje36"]
 [ext_resource type="Script" path="res://Player/o2 bar/oxygenbar3.gd" id="17_l3vup"]
+[ext_resource type="Texture2D" uid="uid://de5673tsxw7w5" path="res://Art assets/Oxygen Tank Outline-2.png" id="18_ntn6o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6afm"]
 size = Vector2(128, 128)
@@ -111,6 +113,7 @@ scale = Vector2(2, 2)
 value = 100.0
 fill_mode = 3
 texture_under = ExtResource("15_aatiu")
+texture_over = ExtResource("16_vje36")
 texture_progress = ExtResource("11_v6ddp")
 texture_progress_offset = Vector2(8, 12)
 script = ExtResource("16_qxjyf")
@@ -138,8 +141,10 @@ offset_bottom = 112.0
 scale = Vector2(2, 2)
 value = 100.0
 fill_mode = 3
+texture_over = ExtResource("18_ntn6o")
 texture_progress = ExtResource("11_v6ddp")
 texture_progress_offset = Vector2(58, 12)
+tint_over = Color(1, 1, 1, 0)
 script = ExtResource("17_l3vup")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/oxygenbar3"]

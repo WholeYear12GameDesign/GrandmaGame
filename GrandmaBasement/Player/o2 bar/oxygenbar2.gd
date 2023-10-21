@@ -9,7 +9,11 @@ func _ready() -> void:
 		show()
 
 func _process(_delta: float) -> void:
-	var o2 : float = player_data.tank1
+	if player_data.current_tank == 0:
+		tint_over.a = 1
+	else:
+		tint_over.a = 0
+	var o2 : float = player_data.oxygen[0]
 	tint_progress = grad.sample(o2 / 100)
 	value = o2
 	if o2 < 25:

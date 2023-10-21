@@ -24,7 +24,8 @@ var air = false
 var okh : float = 0.0
 
 func _ready():
-	player_data.tank1 = 100
+	player_data.oxygen[0] = 100
+	player_data.oxygen[1] = 100
 	prev_state = states.idle
 	current_state = states.idle
 	for state in states.get_children():
@@ -36,13 +37,14 @@ func _physics_process(delta):
 	$Sprite.modulate.h += 0.01
 	$currentstate.text = str(current_state.name)
 	if Input.is_action_just_pressed("free_oxygen"):
-		player_data.tank1 = 100
+		player_data.oxygen[0] = 100
 	if Input.is_action_just_pressed("pause"):
 		get_tree().change_scene_to_file("res://Player/changetanks.tscn")
 	
 	
 	move_and_slide()
 	position += velocity
+	
 	#input
 	movement_input = Vector2.ZERO
 	if Input.is_action_pressed("right"):
@@ -69,12 +71,22 @@ func _physics_process(delta):
 	#oxygen
 	if !air:
 		if player_data.tanks[0] == "OXYGEN":
-			player_data.tank1 -= delta
-			if player_data.tank1 <= 0 and player_data.tanks[1] == "OXYGEN":
-				player_data.tank2 -= delta
+			player_data.oxygen[0] -= delta
+			if player_data.oxygen[0] <= 0 and player_data.tanks[1] == "OXYGEN":
+				player_data.oxygen[1] -= delta
 		elif player_data.tanks[1] == "OXYGEN":
-			player_data.tank2 -= delta
-		
+			player_data.oxygen[1] -= delta
+	if player_data.tanks[0] != player_data.tanks[1] and Input.is_action_just_pressed("changetank"):
+		if player_data.current_tank == 0:
+			player_data.current_tank = 1
+		else:
+			player_data.current_tank = 0
+	if player_data.oxygen[0] <= 0:
+		player_data.current_tank = 1
+	elif player_data.oxygen[1] <= 0:
+		player_data.current_tank = 0
+	elif player_data.oxygen[0] <= 0 and player_data.oxygen[1] <= 0:
+		retry()
 	
 	change_state(current_state.update(delta))
 
@@ -99,4 +111,6 @@ func update_items(item_name, item_icon):
 		$CanvasLayer/CurrentItem/ItemSprite.set_texture(load(item_icon))
 
 func retry():
+	player_data.oxygen[0] = 100
+	player_data.oxygen[1] = 100
 	global_position = player_data.checkpoint

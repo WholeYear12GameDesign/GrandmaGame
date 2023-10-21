@@ -23,6 +23,8 @@ offset = Vector2(0, 1080)
 [node name="TestNPC" parent="." instance=ExtResource("4_33vj5")]
 position = Vector2(-1, -84)
 like_list = ["Item1", "Item2", "Item3"]
+req_items = null
+given_items = null
 
 [node name="Item" parent="." instance=ExtResource("5_54f0v")]
 position = Vector2(-447, 32)

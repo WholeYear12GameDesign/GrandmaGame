@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Levels/Dome.gd" id="1_24epd"]
 [ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="1_ptrq7"]
-[ext_resource type="PackedScene" uid="uid://dbn5nrx7d5gcf" path="res://Levels/teleport.tscn" id="2_6olkp"]
+[ext_resource type="PackedScene" uid="uid://bp5b1rp7njaor" path="res://Levels/teleport.tscn" id="2_6olkp"]
 [ext_resource type="PackedScene" uid="uid://dxcfpp5okoqaf" path="res://Player/player.tscn" id="3_l6r57"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkr63"]
@@ -100,7 +100,7 @@ position = Vector2(-272, -25)
 scale = Vector2(0.50583, 0.50583)
 
 [node name="Teleport2" parent="Teleporters" instance=ExtResource("2_6olkp")]
-position = Vector2(-49, -25)
+position = Vector2(-78, -25)
 scale = Vector2(0.50583, 0.50583)
 next_level = "res://Player/debug.tscn"
 

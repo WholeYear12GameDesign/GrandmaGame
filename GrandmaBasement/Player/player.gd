@@ -87,10 +87,16 @@ func _physics_process(delta):
 		else:
 			player_data.current_tank = 0
 	if player_data.oxygen[0] <= 0:
-		player_data.current_tank = 1
+		if player_data.tanks[1] == "OXYGEN":
+			player_data.current_tank = 1
+		else:
+			retry()
 	elif player_data.oxygen[1] <= 0:
-		player_data.current_tank = 0
-	elif player_data.oxygen[0] <= 0 and player_data.oxygen[1] <= 0:
+		if player_data.tanks[0] == "OXYGEN":
+			player_data.current_tank = 0
+		else:
+			retry()
+	if player_data.oxygen[0] <= 0 and player_data.oxygen[1] <= 0:
 		retry()
 	
 	change_state(current_state.update(delta))

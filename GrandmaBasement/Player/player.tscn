@@ -21,13 +21,14 @@
 [ext_resource type="Texture2D" uid="uid://de5673tsxw7w5" path="res://Art assets/Oxygen Tank Outline-2.png" id="18_ntn6o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6afm"]
-size = Vector2(128, 128)
+size = Vector2(64, 64)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_u67x1")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_yvcg4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -70,10 +71,10 @@ theme = ExtResource("10_nc8pa")
 position = Vector2(88, 96)
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 316.0
-offset_top = 365.0
-offset_right = 493.0
-offset_bottom = 505.0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 659.0
+offset_bottom = 145.0
 theme_override_font_sizes/font_size = 100
 text = "agh"
 
@@ -123,7 +124,7 @@ script = ExtResource("16_qxjyf")
 layout_mode = 0
 offset_left = 22.0
 offset_top = 17.0
-offset_right = 30.0
+offset_right = 31.0
 offset_bottom = 104.0
 theme_override_fonts/bold_font = ExtResource("10_aybem")
 theme_override_font_sizes/bold_font_size = 10
@@ -150,12 +151,11 @@ script = ExtResource("17_l3vup")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/oxygenbar3"]
 layout_mode = 0
-offset_left = 70.5
-offset_top = 15.5
+offset_left = 71.5
+offset_top = 16.5
 offset_right = 80.5
-offset_bottom = 102.5
+offset_bottom = 103.5
 theme_override_fonts/bold_font = ExtResource("10_aybem")
-theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/bold_font_size = 10
 bbcode_enabled = true
 text = "[center][b]OXYGEN[/b][/center]"

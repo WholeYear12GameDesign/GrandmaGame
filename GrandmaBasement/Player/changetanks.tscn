@@ -27,7 +27,7 @@ theme_override_constants/separation = 400
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 200
+theme_override_constants/separation = 150
 
 [node name="none" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -44,6 +44,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "WATER"
 
+[node name="fire" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "FIRE"
+
 [node name="Button" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
@@ -51,7 +56,7 @@ text = "BACK"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 200
+theme_override_constants/separation = 150
 
 [node name="none2" type="Button" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -68,10 +73,17 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "WATER"
 
+[node name="fire2" type="Button" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "FIRE"
+
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/none" to="." method="_on_none_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/oxygen" to="." method="_on_oxygen_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/water" to="." method="_on_water_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/fire" to="." method="_on_fire_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/none2" to="." method="_on_none_2_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/oxygen2" to="." method="_on_oxygen_2_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/water2" to="." method="_on_water_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/fire2" to="." method="_on_fire_2_pressed"]

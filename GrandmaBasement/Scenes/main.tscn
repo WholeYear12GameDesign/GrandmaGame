@@ -128,7 +128,6 @@ text = "Debug"
 
 [node name="Player" parent="." instance=ExtResource("3_l6r57")]
 position = Vector2(48, 28)
-scale = Vector2(0.325336, 0.325336)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

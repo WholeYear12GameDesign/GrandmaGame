@@ -1,4 +1,4 @@
-For each level statt with making a scene called dome 1 or something similar and attach the Dome.gd script to it then place first screen and the other nodes that are found in the Dome_1 scene
+For each level start with making a scene called dome 1 or something similar and attach the Dome.gd script to it then place first screen and the other nodes that are found in the Dome_1 scene
 without these the levels will just not work
 
 When placing the load screen make sure it is around 30px away from the exit

@@ -14,7 +14,6 @@ func _ready() -> void:
 	elif player_data.tanks[1] != "NONE":
 		show()
 		array = 1
-	$"../Label".text = str(player_data.tanks[0],"  ",player_data.tanks[1])
 
 func _process(_delta: float) -> void:
 	var o2 : float = player_data.oxygen[0]

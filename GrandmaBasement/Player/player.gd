@@ -9,6 +9,7 @@ var current_state = null
 var prev_state = null
 
 #input vars
+var last_direction = Vector2.RIGHT
 var movement_input = Vector2.ZERO
 var jump_input = false
 var jump_input_actuation = false
@@ -22,9 +23,10 @@ var speed = 20
 var jump_velocity = -10
 var max_speed = 30
 var air = false
-var okh : float = 0.0
+var okh : float = 0.0 #who ever added this please tell me what it is for
 
 func _ready():
+	player_data.current_tank = 0
 	player_data.oxygen[0] = 100
 	player_data.oxygen[1] = 100
 	prev_state = states.idle
@@ -37,6 +39,8 @@ func _physics_process(delta):
 	#debug please delete in future
 	$Sprite.modulate.h += 0.01
 	$currentstate.text = str(current_state.name)
+	$CanvasLayer/Label.text = str(get_node("states/jetpack/jetpacktimer").time_left)
+	print(velocity)
 	if Input.is_action_just_pressed("free_oxygen"):
 		player_data.oxygen[0] = 100
 	if Input.is_action_just_pressed("pause"):
@@ -47,15 +51,9 @@ func _physics_process(delta):
 	position += velocity
 	
 	#input
-	movement_input = Vector2.ZERO
-	if Input.is_action_pressed("right"):
-		movement_input.x += 1
-	if Input.is_action_pressed("left"):
-		movement_input.x -= 1
-	if Input.is_action_pressed("up"):
-		movement_input.y -= 1
-	if Input.is_action_pressed("down"):
-		movement_input.y += 1
+	movement_input = Input.get_vector("left","right","up","down")
+	if movement_input != Vector2.ZERO:
+		last_direction = movement_input
 	if Input.is_action_pressed("jump"):
 		jump_input = true
 	else:
@@ -89,12 +87,12 @@ func _physics_process(delta):
 	if player_data.oxygen[0] <= 0:
 		if player_data.tanks[1] == "OXYGEN":
 			player_data.current_tank = 1
-		else:
+		elif !air:
 			retry()
 	elif player_data.oxygen[1] <= 0:
 		if player_data.tanks[0] == "OXYGEN":
 			player_data.current_tank = 0
-		else:
+		elif !air:
 			retry()
 	if player_data.oxygen[0] <= 0 and player_data.oxygen[1] <= 0:
 		retry()

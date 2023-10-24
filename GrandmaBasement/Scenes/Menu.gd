@@ -17,7 +17,7 @@ func _on_start_pressed():
 
 
 func _on_continuefrom_save_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Player/debug.tscn")
 
 
 func _on_level_select_pressed():

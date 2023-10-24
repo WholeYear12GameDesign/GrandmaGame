@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://dxcfpp5okoqaf"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_u67x1"]
-[ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="2_yvcg4"]
+[ext_resource type="Texture2D" uid="uid://ci4ai4e1fyimn" path="res://Art assets/dreamcat.png" id="2_t84bb"]
 [ext_resource type="Script" path="res://Player/states/states.gd" id="3_477pk"]
 [ext_resource type="PackedScene" uid="uid://3baqbxgaddpt" path="res://Player/states/fall.tscn" id="4_cpdu4"]
 [ext_resource type="PackedScene" uid="uid://bxkduep2swuv1" path="res://Player/states/idle.tscn" id="5_pmd4m"]
@@ -28,8 +28,8 @@ script = ExtResource("1_u67x1")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_yvcg4")
+scale = Vector2(2.7, 2.7)
+texture = ExtResource("2_t84bb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_c6afm")

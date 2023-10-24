@@ -12,7 +12,7 @@ func update(delta):
 	if nozzle == 1:
 		player_movement(delta)
 		player.velocity.y = -5
-		player_data.oxygen[player_data.current_tank] -= 5 * delta
+		player_data.oxygen[player_data.current_tank] -= 10 * delta
 		if !player.jetpack_hold:
 			return states.fall
 	if nozzle == 2:

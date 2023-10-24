@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dg2qn76g4qelb"]
+[gd_scene load_steps=6 format=3 uid="uid://dg2qn76g4qelb"]
 
 [ext_resource type="PackedScene" uid="uid://dxcfpp5okoqaf" path="res://Player/player.tscn" id="1_8hx18"]
 [ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="2_hlsc1"]
+[ext_resource type="PackedScene" uid="uid://crc7771xpqqld" path="res://Player/block.tscn" id="3_i4v55"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fpetr"]
 texture = ExtResource("2_hlsc1")
@@ -26,3 +27,9 @@ sources/0 = SubResource("TileSetAtlasSource_fpetr")
 tile_set = SubResource("TileSet_ddhfx")
 format = 2
 layer_0/tile_data = PackedInt32Array(327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0)
+
+[node name="block" parent="." instance=ExtResource("3_i4v55")]
+position = Vector2(399, 446)
+
+[node name="block2" parent="." instance=ExtResource("3_i4v55")]
+position = Vector2(222, 127)

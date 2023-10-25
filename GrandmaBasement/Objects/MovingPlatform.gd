@@ -19,6 +19,6 @@ func _physics_process(delta):
 		direction = -1
 	$Path2D/PathFollow2D.progress_ratio += direction * delta * speed
 	if player in $Path2D/PathFollow2D/PlayerOn.get_overlapping_bodies():
-		player.global_position.x -= last_position.x - $Path2D/PathFollow2D.global_position.x
+		player.global_position -= last_position - $Path2D/PathFollow2D.global_position
 	#print(last_position, global_position)
 	last_position = $Path2D/PathFollow2D.global_position

@@ -21,13 +21,13 @@ next_scene = "res://Levels/Dome1/Dome1Screen2.tscn"
 offset = Vector2(0, 1080)
 
 [node name="LoadScreen2" parent="." instance=ExtResource("2_481er")]
-position = Vector2(-983, 30)
+position = Vector2(-987, 30)
 next_scene = "res://Levels/Dome1/Dome1Screen5.tscn"
 offset = Vector2(-1920, 0)
 
 [node name="LoadScreen3" parent="." instance=ExtResource("2_481er")]
 position = Vector2(1021, 32)
-next_scene = "res://Levels/Dome1/Dome1Screen2.tscn"
+next_scene = "res://Levels/Dome1/Dome1Screen6.tscn"
 offset = Vector2(1920, 0)
 
 [node name="TestNPC" parent="." instance=ExtResource("4_33vj5")]

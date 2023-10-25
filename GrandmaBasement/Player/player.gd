@@ -71,6 +71,11 @@ func _physics_process(delta):
 	else:
 		jetpack_hold = false
 	
+	if Input.is_action_just_pressed("left"):
+		sprite.flip_h = true
+	if Input.is_action_just_pressed("right"):
+		sprite.flip_h = false
+	
 	#oxygen
 	if !air:
 		if player_data.tanks[0] == "OXYGEN":
@@ -98,6 +103,9 @@ func _physics_process(delta):
 		retry()
 	
 	change_state(current_state.update(delta))
+
+func animation(animationname):
+	sprite.play(animationname)
 
 func change_state(input_state):
 	if input_state != null:

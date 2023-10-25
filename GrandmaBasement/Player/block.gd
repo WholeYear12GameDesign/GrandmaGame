@@ -17,8 +17,6 @@ func _process(delta):
 	$RayCast2D2.force_raycast_update()
 	if !$RayCast2D.is_colliding() and !$RayCast2D2.is_colliding():
 		fall(delta)
-	else:
-		gravity = 20
 
 func fall(delta):
 	position.y += fallspeed * delta

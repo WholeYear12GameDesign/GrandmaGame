@@ -1,6 +1,5 @@
-[gd_scene load_steps=65 format=3 uid="uid://beke78ql87ol5"]
+[gd_scene load_steps=64 format=3 uid="uid://beke78ql87ol5"]
 
-[ext_resource type="Texture2D" uid="uid://63u6x57hdpbx" path="res://Art assets/Oxygen.png" id="1_s81u3"]
 [ext_resource type="Texture2D" uid="uid://rwb8yr54rvbi" path="res://Art assets/fire4digi_75x94.png" id="2_tiudd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uf8rd"]
@@ -439,11 +438,6 @@ animations = [{
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -83)
 shape = SubResource("CircleShape2D_uf8rd")
-
-[node name="Oxygen" type="Sprite2D" parent="."]
-position = Vector2(0.5, -34)
-scale = Vector2(0.542857, 0.795918)
-texture = ExtResource("1_s81u3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2.5, -96)

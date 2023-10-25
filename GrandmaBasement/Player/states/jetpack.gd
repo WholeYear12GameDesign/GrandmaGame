@@ -7,15 +7,18 @@ var flamethrower = preload("res://Player/states/flamethrower.tscn")
 
 func update(delta):
 	if nozzle == 0:
+		player.animation("jump")
 		if jetpackfinished:
 			return states.fall
 	if nozzle == 1:
+		player.animation("jump")
 		player_movement(delta)
 		player.velocity.y = -5
 		player_data.oxygen[player_data.current_tank] -= 10 * delta
 		if !player.jetpack_hold:
 			return states.fall
 	if nozzle == 2:
+		player.animation("flamethrower")
 		player.fall(delta)
 		get_node(str("/root/",get_tree().current_scene.name,"/Player/flamethrower")).rotation = player.last_direction.angle() + PI / 2
 		if !player.jetpack_hold:

@@ -17,5 +17,6 @@ func update(delta):
 	return null
 
 func enter_state():
+	player.animation("jump")
 	jumptimer.start(jump_duration)
 	player.velocity.y = player.jump_velocity

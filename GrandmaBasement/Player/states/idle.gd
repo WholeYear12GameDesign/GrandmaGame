@@ -1,6 +1,7 @@
 extends "state.gd"
 
 func update(delta):
+	player.animation("idle")
 	player.fall(delta)
 	if player.movement_input.x != 0:
 		return states.walk

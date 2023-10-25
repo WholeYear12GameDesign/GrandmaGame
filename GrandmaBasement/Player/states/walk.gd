@@ -1,6 +1,7 @@
 extends "state.gd"
 
 func update(delta):
+	player.animation("run")
 	player.fall(delta)
 	player_movement(delta)
 	if player.velocity.x == 0:

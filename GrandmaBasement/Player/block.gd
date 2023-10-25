@@ -1,10 +1,12 @@
-extends RigidBody2D
+extends StaticBody2D
 
 var player = null
-var gravity = 20
+var gravity = 100
+var maxgravity = 20
+var fallspeed = 0
 
 func _process(delta):
-	$Label.text = str(gravity)
+	$Label.text = str(fallspeed)
 	if player != null:
 		modulate.a = 0.5
 		if player.jetpack_hold:
@@ -19,9 +21,9 @@ func _process(delta):
 		gravity = 20
 
 func fall(delta):
-	position.y += gravity * delta
-	if gravity < 1000:
-		gravity *= 1.02
+	position.y += fallspeed * delta
+	if fallspeed < maxgravity:
+		fallspeed  += gravity
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":

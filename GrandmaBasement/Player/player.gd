@@ -39,7 +39,7 @@ func _physics_process(delta):
 	#debug please delete in future
 	$Sprite.modulate.h += 0.01
 	$currentstate.text = str(current_state.name)
-	$CanvasLayer/Label.text = str(get_node("states/jetpack/jetpacktimer").time_left)
+	$CanvasLayer/Label.text = str(velocity.y)
 	#print(velocity)
 	if Input.is_action_just_pressed("free_oxygen"):
 		player_data.oxygen[0] = 100

@@ -7,10 +7,9 @@
 size = Vector2(120, 120)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2lsv4"]
-size = Vector2(138, 101)
+size = Vector2(184, 105)
 
 [node name="block" type="RigidBody2D"]
-lock_rotation = true
 script = ExtResource("1_rnuq1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -32,14 +31,12 @@ offset_right = -72.0
 offset_bottom = -75.0
 theme_override_font_sizes/font_size = 100
 
-[node name="raycasts" type="Node2D" parent="."]
-
-[node name="RayCast2D" type="RayCast2D" parent="raycasts"]
-position = Vector2(-30, 0)
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-60, 0)
 target_position = Vector2(0, 70)
 
-[node name="RayCast2D2" type="RayCast2D" parent="raycasts"]
-position = Vector2(30, 0)
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+position = Vector2(60, 0)
 target_position = Vector2(0, 70)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://rwb8yr54rvbi" path="res://Art assets/fire4digi_75x94.png" id="2_tiudd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uf8rd"]
-radius = 30.0666
+radius = 90.0222
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xn33t"]
 atlas = ExtResource("2_tiudd")
@@ -436,10 +436,13 @@ animations = [{
 [node name="flamethrower" type="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -83)
+position = Vector2(123, -24)
+rotation = 1.5708
 shape = SubResource("CircleShape2D_uf8rd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2.5, -96)
+position = Vector2(162, -20.5001)
+rotation = 1.5708
+scale = Vector2(2.09333, 2.87234)
 sprite_frames = SubResource("SpriteFrames_8dnth")
 animation = &"fire"

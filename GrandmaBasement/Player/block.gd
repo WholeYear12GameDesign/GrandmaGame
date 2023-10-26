@@ -6,7 +6,6 @@ var maxgravity = 20
 var fallspeed = 0
 
 func _process(delta):
-	$Label.text = str(fallspeed)
 	if player != null:
 		modulate.a = 0.5
 		if player.jetpack_hold:

@@ -24,13 +24,6 @@ shape = SubResource("RectangleShape2D_ga8qq")
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_v1rao")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -112.0
-offset_top = -212.0
-offset_right = -72.0
-offset_bottom = -75.0
-theme_override_font_sizes/font_size = 100
-
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(-60, 0)
 target_position = Vector2(0, 70)

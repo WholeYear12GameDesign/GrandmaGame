@@ -26,7 +26,10 @@ var air = false
 var okh : float = 0.0 #who ever added this please tell me what it is for
 
 func _ready():
-	player_data.current_tank = 0
+	if player_data.tanks[0] != "OXYGEN":
+		player_data.current_tank = 1
+	else:
+		player_data.current_tank = 0
 	player_data.oxygen[0] = 100
 	player_data.oxygen[1] = 100
 	prev_state = states.idle
@@ -43,6 +46,7 @@ func _physics_process(delta):
 	#print(velocity)
 	if Input.is_action_just_pressed("free_oxygen"):
 		player_data.oxygen[0] = 100
+		player_data.oxygen[1] = 100
 	if Input.is_action_just_pressed("pause"):
 		get_tree().change_scene_to_file("res://Player/changetanks.tscn")
 	
@@ -128,6 +132,7 @@ func update_items(item_name, item_icon):
 		$CanvasLayer/CurrentItem/ItemSprite.set_texture(load(item_icon))
 
 func retry():
+	current_state = states.idle
 	player_data.oxygen[0] = 100
 	player_data.oxygen[1] = 100
 	global_position = player_data.checkpoint

@@ -20,7 +20,7 @@ func update(delta):
 	if nozzle == 2:
 		player.animation("flamethrower")
 		player.fall(delta)
-		get_node(str("/root/",get_tree().current_scene.name,"/Player/flamethrower")).rotation = player.last_direction.angle() + PI / 2
+		get_node(str("/root/",get_tree().current_scene.name,"/Player/flamethrower/AnimatedSprite2D")).flip_v = get_node(str("/root/",get_tree().current_scene.name,"/Player/Sprite")).flip_h
 		if !player.jetpack_hold:
 			return states.fall
 		player_data.oxygen[player_data.current_tank] -= 15 * delta
@@ -37,6 +37,7 @@ func enter_state():
 		$jetpacktimer.start(jetpacktime)
 	elif player_data.tanks[player_data.current_tank] == "WATER":
 		nozzle = 1
+		player_data.oxygen[player_data.current_tank] -= 4
 	elif player_data.tanks[player_data.current_tank] == "FLAME":
 		player.velocity.x = 0
 		nozzle = 2

@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dciqxnvf7oht2" path="res://Player/sprites/space-marine-run.png" id="6_ssw6e"]
 [ext_resource type="PackedScene" uid="uid://b2yicdenxhdc" path="res://Player/states/jump.tscn" id="7_o2y1s"]
 [ext_resource type="PackedScene" uid="uid://b3yjc6q22udw3" path="res://Player/states/walk.tscn" id="8_cufm2"]
-[ext_resource type="PackedScene" path="res://Player/states/block.tscn" id="9_fcufl"]
+[ext_resource type="PackedScene" uid="uid://cswd5hfyh3lm6" path="res://Player/states/block.tscn" id="9_fcufl"]
 [ext_resource type="Script" path="res://Player/o2 bar/o2 bar.gd" id="9_tsq00"]
 [ext_resource type="Texture2D" uid="uid://b7e3fpdc6e4fl" path="res://Art assets/Oxygen Tank.png" id="10_5opu0"]
 [ext_resource type="FontFile" uid="uid://bcl842aehi6gk" path="res://Art assets/PixelAE-Regular.ttf" id="10_aybem"]
@@ -261,7 +261,7 @@ _data = {
 script = ExtResource("1_u67x1")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
+modulate = Color(1, 0.901961, 0.901961, 1)
 scale = Vector2(2.7, 2.7)
 sprite_frames = SubResource("SpriteFrames_bt8wp")
 animation = &"idle"

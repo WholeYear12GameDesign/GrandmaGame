@@ -14,3 +14,5 @@ func _on_give_item_body_entered(body):
 		if given_items >= req_items:
 			# Run final dialogue
 			#print("got all items yay")
+			body.update_items("key", "res://Art assets/icon.svg") 
+			

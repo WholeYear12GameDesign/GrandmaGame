@@ -22,6 +22,3 @@ func _on_body_entered(body):
 func UnloadTimer():
 	get_parent().call_deferred("queue_free")
 
-# Makes door collidable after some time
-func WaitTimer():
-	monitoring = true

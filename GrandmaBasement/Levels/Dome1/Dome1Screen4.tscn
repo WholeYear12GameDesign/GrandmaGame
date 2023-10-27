@@ -15,7 +15,7 @@ scale = Vector2(2.05404, 2)
 skew = 7.85589e-05
 
 [node name="LoadScreen" parent="." instance=ExtResource("2_481er")]
-position = Vector2(-9, 588)
+position = Vector2(-13, 616)
 rotation = -1.5708
 next_scene = "res://Levels/Dome1/Dome1Screen2.tscn"
 offset = Vector2(0, 1080)
@@ -33,8 +33,6 @@ offset = Vector2(1920, 0)
 [node name="TestNPC" parent="." instance=ExtResource("4_33vj5")]
 position = Vector2(-1, -84)
 like_list = ["Item1", "Item2", "Item3"]
-req_items = null
-given_items = null
 
 [node name="Item" parent="." instance=ExtResource("5_54f0v")]
 position = Vector2(-447, 32)

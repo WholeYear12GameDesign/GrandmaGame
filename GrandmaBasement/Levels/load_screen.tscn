@@ -6,7 +6,6 @@
 size = Vector2(190, 4)
 
 [node name="LoadScreen" type="Area2D"]
-monitoring = false
 script = ExtResource("1_u6m0d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -18,11 +17,5 @@ shape = SubResource("RectangleShape2D_pytg4")
 wait_time = 0.6
 one_shot = true
 
-[node name="WaitTimer" type="Timer" parent="."]
-wait_time = 0.3
-one_shot = true
-autostart = true
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="UnloadTimer" to="." method="UnloadTimer"]
-[connection signal="timeout" from="WaitTimer" to="." method="WaitTimer"]

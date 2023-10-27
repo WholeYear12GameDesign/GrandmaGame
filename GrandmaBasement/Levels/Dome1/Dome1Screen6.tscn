@@ -47,19 +47,19 @@ layer_2/tile_data = PackedInt32Array(131097, 131073, 5, 131096, 65537, 5, 131095
 position = Vector2(-339, -10)
 pos1 = Vector2(0, 300)
 pos2 = Vector2(0, -300)
-speed = 0.2
+speed = 0.5
 
 [node name="MovingPlatform2" parent="." instance=ExtResource("4_3weky")]
 position = Vector2(-6, -4)
 pos1 = Vector2(0, -300)
 pos2 = Vector2(0, 300)
-speed = 0.5
+speed = 0.3
 
 [node name="MovingPlatform3" parent="." instance=ExtResource("4_3weky")]
 position = Vector2(309, -1)
 pos1 = Vector2(0, 300)
 pos2 = Vector2(0, -300)
-speed = 0.8
+speed = 0.2
 
 [node name="Item" parent="." instance=ExtResource("5_e3e45")]
 position = Vector2(776, -25)

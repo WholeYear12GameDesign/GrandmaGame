@@ -16,7 +16,7 @@ func update(delta):
 	return null
 
 func enter_state():
-	player.animation("fall")
+	player.animation("fallstart")
 	if player.prev_state == states.idle or player.prev_state == states.walk:
 		can_jump = true
 		coyotetimer.start(coyote_duration)

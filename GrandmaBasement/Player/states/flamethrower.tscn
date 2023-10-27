@@ -446,3 +446,4 @@ rotation = 1.5708
 scale = Vector2(2.09333, 2.87234)
 sprite_frames = SubResource("SpriteFrames_8dnth")
 animation = &"fire"
+frame_progress = 0.521832

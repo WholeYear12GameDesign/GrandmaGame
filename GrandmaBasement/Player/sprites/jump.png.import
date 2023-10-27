@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b32lxodoyh2g6"
-path="res://.godot/imported/space-marine-die.png-e10ea1f7e183e2899f2c9c3181aa1f0e.ctex"
+uid="uid://bkehyfp3kt6tw"
+path="res://.godot/imported/jump.png-f5163e038eb9cf11c4346c9358cb340b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/sprites/space-marine-die.png"
-dest_files=["res://.godot/imported/space-marine-die.png-e10ea1f7e183e2899f2c9c3181aa1f0e.ctex"]
+source_file="res://Player/sprites/jump.png"
+dest_files=["res://.godot/imported/jump.png-f5163e038eb9cf11c4346c9358cb340b.ctex"]
 
 [params]
 

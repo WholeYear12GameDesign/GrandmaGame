@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkb4ps2wvd4xc"
-path="res://.godot/imported/space-marine-shoot.png-e7d4a8dc632e0449831bf763cd58b998.ctex"
+uid="uid://bydp7p8yhqov"
+path="res://.godot/imported/newnewfall night anim.png-1b62ab99d6d5291a78183f9c4ba17ad9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/sprites/space-marine-shoot.png"
-dest_files=["res://.godot/imported/space-marine-shoot.png-e7d4a8dc632e0449831bf763cd58b998.ctex"]
+source_file="res://Player/sprites/newnewfall night anim.png"
+dest_files=["res://.godot/imported/newnewfall night anim.png-1b62ab99d6d5291a78183f9c4ba17ad9.ctex"]
 
 [params]
 

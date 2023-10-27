@@ -83,9 +83,9 @@ func _physics_process(delta):
 	#oxygen
 	if !air:
 		if player_data.tanks[0] == "OXYGEN":
-			player_data.oxygen[0] -= delta
+			player_data.oxygen[0] -= delta+0.015
 			if player_data.oxygen[0] <= 0 and player_data.tanks[1] == "OXYGEN":
-				player_data.oxygen[1] -= delta
+				player_data.oxygen[1] -= delta+0.015
 		elif player_data.tanks[1] == "OXYGEN":
 			player_data.oxygen[1] -= delta
 	if player_data.tanks[0] != player_data.tanks[1] and Input.is_action_just_pressed("changetank"):
@@ -132,7 +132,12 @@ func update_items(item_name, item_icon):
 		$CanvasLayer/CurrentItem/ItemSprite.set_texture(load(item_icon))
 
 func retry():
-	current_state = states.idle
-	player_data.oxygen[0] = 100
-	player_data.oxygen[1] = 100
-	global_position = player_data.checkpoint
+	animation("die")
+	current_state = states.die
+
+func _on_sprite_animation_finished():
+	if sprite.animation == "die":
+		current_state = states.idle
+		player_data.oxygen[0] = 100
+		player_data.oxygen[1] = 100
+		global_position = player_data.checkpoint

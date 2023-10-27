@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://gpw1x2r0g6if"]
+
+[ext_resource type="Script" path="res://Player/states/die.gd" id="1_8p75n"]
+
+[node name="die" type="Node"]
+script = ExtResource("1_8p75n")

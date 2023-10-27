@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dogy0jpcun7nw"
-path="res://.godot/imported/space-marine-idle.png-d08800ed0cc4c9f4fb2cd064fdb57c08.ctex"
+uid="uid://d1irl0275imhp"
+path="res://.godot/imported/New run anim night.png-a9a93c8f19a8ad0385ceda7b0c05f56b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/sprites/space-marine-idle.png"
-dest_files=["res://.godot/imported/space-marine-idle.png-d08800ed0cc4c9f4fb2cd064fdb57c08.ctex"]
+source_file="res://Player/sprites/New run anim night.png"
+dest_files=["res://.godot/imported/New run anim night.png-a9a93c8f19a8ad0385ceda7b0c05f56b.ctex"]
 
 [params]
 

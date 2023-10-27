@@ -6,3 +6,4 @@ extends Node
 @onready var jump = $jump
 @onready var walk = $walk
 @onready var block = $block
+@onready var die = $die

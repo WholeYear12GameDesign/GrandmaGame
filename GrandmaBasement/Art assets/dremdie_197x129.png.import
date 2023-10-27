@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhfwsxftbrgx0"
-path="res://.godot/imported/space-marine-jump.png-0579b8b778806753ec5993c87cda2e30.ctex"
+uid="uid://brhco8ahdkfbx"
+path="res://.godot/imported/dremdie_197x129.png-ab6985145bfae9cdd87a9e0d582c0ab5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/sprites/space-marine-jump.png"
-dest_files=["res://.godot/imported/space-marine-jump.png-0579b8b778806753ec5993c87cda2e30.ctex"]
+source_file="res://Art assets/dremdie_197x129.png"
+dest_files=["res://.godot/imported/dremdie_197x129.png-ab6985145bfae9cdd87a9e0d582c0ab5.ctex"]
 
 [params]
 

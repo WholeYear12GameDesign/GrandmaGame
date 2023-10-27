@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dciqxnvf7oht2"
-path="res://.godot/imported/space-marine-run.png-d06005bb9ee15f3d47390b1263a18385.ctex"
+uid="uid://ccr1mf74xwrev"
+path="res://.godot/imported/dremidle_45x45.png-cb9c5922261bdd2ba8b9f19da93b2e96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/sprites/space-marine-run.png"
-dest_files=["res://.godot/imported/space-marine-run.png-d06005bb9ee15f3d47390b1263a18385.ctex"]
+source_file="res://Art assets/dremidle_45x45.png"
+dest_files=["res://.godot/imported/dremidle_45x45.png-cb9c5922261bdd2ba8b9f19da93b2e96.ctex"]
 
 [params]
 

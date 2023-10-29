@@ -37,7 +37,6 @@ line_1 = "Hi"
 line_2 = "wow that is so cool"
 line_3 = "thanks for that"
 line_4 = "thanks for the gift"
-line_5 = "thank yuo for your help have a key"
 
 [node name="Item" parent="." instance=ExtResource("5_54f0v")]
 position = Vector2(-447, 32)

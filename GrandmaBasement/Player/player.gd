@@ -124,8 +124,7 @@ func fall(delta):
 		velocity.y += gravity * delta
 
 #change the item the player is holding
-func update_items(item_name, item_icon):
-	player_data.current_item = item_name
+func update_items(item_icon):
 	if item_icon == "none":
 		$CanvasLayer/CurrentItem/ItemSprite.set_texture(null)
 	else:

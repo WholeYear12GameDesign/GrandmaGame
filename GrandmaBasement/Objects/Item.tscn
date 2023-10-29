@@ -2,7 +2,6 @@
 
 [sub_resource type="GDScript" id="GDScript_2or84"]
 script/source = "extends Area2D
-
 @export var item_name = \"\"
 @export var item_icon = \"\"
 
@@ -14,9 +13,9 @@ func _ready():
 
 
 func _on_body_entered(body):
-	if body.name == \"Player\" && player_data.current_item == \"none\":
-		body.update_items(item_name, item_icon)
-		player_data.gotten_items.append(item_name)
+	if body.name == \"Player\" && player_data.holding_gift == false && player_data.holding_key == false:
+		body.update_items(item_icon)
+		player_data.holding_gift = true
 		queue_free()
 "
 

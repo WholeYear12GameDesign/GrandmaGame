@@ -13,7 +13,8 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
-		if player_data.holding_key:
+		if player_data.holding_key == true:
+			player_data.holding_key = false
 			body.update_items("none")
 			$AnimationPlayer.play("open")
 

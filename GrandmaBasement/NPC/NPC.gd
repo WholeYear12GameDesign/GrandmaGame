@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+@export var npc_name = ""
 @export var like_list = []
 @export var req_items = 3
 @export var given_items = 0

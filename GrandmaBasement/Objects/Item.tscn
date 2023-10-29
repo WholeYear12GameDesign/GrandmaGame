@@ -8,12 +8,15 @@ script/source = "extends Area2D
 
 
 func _ready():
+	if item_name in player_data.gotten_items:
+		queue_free()
 	$Sprite2D.texture = load(item_icon)
 
 
 func _on_body_entered(body):
-	if body.name == \"Player\":
+	if body.name == \"Player\" && player_data.current_item == \"none\":
 		body.update_items(item_name, item_icon)
+		player_data.gotten_items.append(item_name)
 		queue_free()
 "
 

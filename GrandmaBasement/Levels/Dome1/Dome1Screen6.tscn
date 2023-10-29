@@ -65,21 +65,3 @@ speed = 0.2
 position = Vector2(776, -25)
 item_name = "Item3"
 item_icon = "res://Art assets/icon.svg"
-
-[connection signal="body_entered" from="TileMap/@Area2D@46372" to="TileMap/@Area2D@46372" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@46373" to="TileMap/@Area2D@46373" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@46374" to="TileMap/@Area2D@46374" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@46375" to="TileMap/@Area2D@46375" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/Spike" to="TileMap/Spike" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@46384" to="TileMap/@Area2D@46384" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@46385" to="TileMap/@Area2D@46385" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@46386" to="TileMap/@Area2D@46386" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@46387" to="TileMap/@Area2D@46387" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@46398" to="TileMap/@Area2D@46398" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@46399" to="TileMap/@Area2D@46399" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@46400" to="TileMap/@Area2D@46400" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@46401" to="TileMap/@Area2D@46401" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@46402" to="TileMap/@Area2D@46402" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@46406" to="TileMap/@Area2D@46406" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@46407" to="TileMap/@Area2D@46407" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="TileMap/@Area2D@46408" to="TileMap/@Area2D@46408" method="_on_body_entered" flags=18]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=3 uid="uid://dxcfpp5okoqaf"]
+[gd_scene load_steps=150 format=3 uid="uid://dxcfpp5okoqaf"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_u67x1"]
 [ext_resource type="Texture2D" uid="uid://xsprti67f1dl" path="res://Player/sprites/wakeup.png" id="2_rqfdk"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d1irl0275imhp" path="res://Player/sprites/New run anim night.png" id="7_11h2h"]
 [ext_resource type="PackedScene" uid="uid://b2yicdenxhdc" path="res://Player/states/jump.tscn" id="7_o2y1s"]
 [ext_resource type="PackedScene" uid="uid://b3yjc6q22udw3" path="res://Player/states/walk.tscn" id="8_cufm2"]
-[ext_resource type="PackedScene" path="res://Player/states/block.tscn" id="9_fcufl"]
+[ext_resource type="PackedScene" uid="uid://cswd5hfyh3lm6" path="res://Player/states/block.tscn" id="9_fcufl"]
 [ext_resource type="Script" path="res://Player/o2 bar/o2 bar.gd" id="9_tsq00"]
 [ext_resource type="Texture2D" uid="uid://b7e3fpdc6e4fl" path="res://Art assets/Oxygen Tank.png" id="10_5opu0"]
 [ext_resource type="FontFile" uid="uid://bcl842aehi6gk" path="res://Art assets/PixelAE-Regular.ttf" id="10_aybem"]
@@ -901,6 +901,67 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6afm"]
 size = Vector2(61.4, 105.4)
 
+[sub_resource type="Animation" id="Animation_c8eux"]
+resource_name = "Run"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_tskit"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lvwi2"]
+_data = {
+"RESET": SubResource("Animation_tskit"),
+"Run": SubResource("Animation_c8eux")
+}
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_u67x1")
 
@@ -1046,5 +1107,28 @@ shortcut_keys_enabled = false
 meta_underlined = false
 hint_underlined = false
 text_direction = 1
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+visible = false
+offset_left = 270.0
+offset_top = 744.0
+offset_right = 1663.0
+offset_bottom = 989.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 16.0
+offset_right = 1370.0
+offset_bottom = 227.0
+theme_override_font_sizes/font_size = 32
+text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_lvwi2")
+}
 
 [connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]

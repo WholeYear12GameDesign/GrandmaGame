@@ -141,3 +141,7 @@ func _on_sprite_animation_finished():
 		player_data.oxygen[0] = 100
 		player_data.oxygen[1] = 100
 		global_position = player_data.checkpoint
+
+func run_dialogue(message):
+	$CanvasLayer/AnimationPlayer.play("Run")
+	$CanvasLayer/Panel/Label.text = message

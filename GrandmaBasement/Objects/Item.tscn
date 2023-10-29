@@ -15,6 +15,7 @@ func _ready():
 func _on_body_entered(body):
 	if body.name == \"Player\" && player_data.holding_gift == false && player_data.holding_key == false:
 		body.update_items(item_icon)
+		player_data.gotten_items.append(item_name)
 		player_data.holding_gift = true
 		queue_free()
 "

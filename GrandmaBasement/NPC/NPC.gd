@@ -18,6 +18,7 @@ func _ready():
 		player_data.current_npc = npc_name
 		player_data.item_count = 0
 	given_items = player_data.item_count
+	print(given_items, player_data.item_count,player_data.current_npc)
 
 
 func _on_give_item_body_entered(body):
@@ -25,6 +26,7 @@ func _on_give_item_body_entered(body):
 		if player_data.holding_gift == true:
 			player_data.holding_gift = false
 			given_items += 1
+			player_data.item_count = given_items
 			body.update_items("none")
 			if given_items == 1:
 				body.run_dialogue(line_2)

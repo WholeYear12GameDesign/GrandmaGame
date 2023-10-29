@@ -24,6 +24,7 @@ var jump_velocity = -10
 var max_speed = 30
 var air = false
 var okh : float = 0.0 #who ever added this please tell me what it is for
+var dead = false
 
 func _ready():
 	if player_data.tanks[0] != "OXYGEN":
@@ -41,8 +42,6 @@ func _ready():
 func _physics_process(delta):
 	#debug please delete in future
 	$Sprite.modulate.h += 0.01
-	$currentstate.text = str(current_state.name)
-	$CanvasLayer/Label.text = str(velocity.y)
 	#print(velocity)
 	if Input.is_action_just_pressed("free_oxygen"):
 		player_data.oxygen[0] = 100
@@ -79,32 +78,32 @@ func _physics_process(delta):
 		sprite.flip_h = true
 	if Input.is_action_just_pressed("right"):
 		sprite.flip_h = false
-	
 	#oxygen
-	if !air:
-		if player_data.tanks[0] == "OXYGEN":
-			player_data.oxygen[0] -= delta+0.015
-			if player_data.oxygen[0] <= 0 and player_data.tanks[1] == "OXYGEN":
-				player_data.oxygen[1] -= delta+0.015
-		elif player_data.tanks[1] == "OXYGEN":
-			player_data.oxygen[1] -= delta
-	if player_data.tanks[0] != player_data.tanks[1] and Input.is_action_just_pressed("changetank"):
-		if player_data.current_tank == 0:
-			player_data.current_tank = 1
-		else:
-			player_data.current_tank = 0
-	if player_data.oxygen[0] <= 0:
-		if player_data.tanks[1] == "OXYGEN":
-			player_data.current_tank = 1
-		elif !air:
+	if !dead:
+		if !air:
+			if player_data.tanks[0] == "OXYGEN":
+				player_data.oxygen[0] -= delta+0.015
+				if player_data.oxygen[0] <= 0 and player_data.tanks[1] == "OXYGEN":
+					player_data.oxygen[1] -= delta+0.015
+			elif player_data.tanks[1] == "OXYGEN":
+				player_data.oxygen[1] -= delta
+		if player_data.tanks[0] != player_data.tanks[1] and Input.is_action_just_pressed("changetank"):
+			if player_data.current_tank == 0:
+				player_data.current_tank = 1
+			else:
+				player_data.current_tank = 0
+		if player_data.oxygen[0] <= 0:
+			if player_data.tanks[1] == "OXYGEN":
+				player_data.current_tank = 1
+			elif !air:
+				retry()
+		elif player_data.oxygen[1] <= 0:
+			if player_data.tanks[0] == "OXYGEN":
+				player_data.current_tank = 0
+			elif !air:
+				retry()
+		if player_data.oxygen[0] <= 0 and player_data.oxygen[1] <= 0:
 			retry()
-	elif player_data.oxygen[1] <= 0:
-		if player_data.tanks[0] == "OXYGEN":
-			player_data.current_tank = 0
-		elif !air:
-			retry()
-	if player_data.oxygen[0] <= 0 and player_data.oxygen[1] <= 0:
-		retry()
 	
 	change_state(current_state.update(delta))
 
@@ -131,6 +130,7 @@ func update_items(item_icon):
 		$CanvasLayer/CurrentItem/ItemSprite.set_texture(load(item_icon))
 
 func retry():
+	dead = true
 	animation("die")
 	current_state = states.die
 
@@ -140,7 +140,7 @@ func _on_sprite_animation_finished():
 		player_data.oxygen[0] = 100
 		player_data.oxygen[1] = 100
 		global_position = player_data.checkpoint
+		dead = false
 
 func run_dialogue(message):
 	$CanvasLayer/AnimationPlayer.play("Run")
-	$CanvasLayer/Panel/Label.text = message

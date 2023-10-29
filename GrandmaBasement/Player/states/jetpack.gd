@@ -33,7 +33,7 @@ func enter_state():
 		jetpackfinished = false
 		nozzle = 0
 		player_data.oxygen[player_data.current_tank] -= 6
-		player.velocity = player.last_direction * 50 + Vector2(0,-1)
+		player.velocity = player.last_direction * 40 + Vector2(0,-1)
 		$jetpacktimer.start(jetpacktime)
 	elif player_data.tanks[player_data.current_tank] == "WATER":
 		nozzle = 1

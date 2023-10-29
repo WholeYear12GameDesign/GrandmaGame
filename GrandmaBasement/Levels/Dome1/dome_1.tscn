@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bko50kji0lg6b"]
+[gd_scene load_steps=10 format=3 uid="uid://bko50kji0lg6b"]
 
 [ext_resource type="PackedScene" uid="uid://cvty8n1cnto1q" path="res://Levels/Dome1/Dome1Screen1.tscn" id="1_b7x1n"]
 [ext_resource type="Script" path="res://Levels/Dome.gd" id="1_s8f27"]
 [ext_resource type="PackedScene" uid="uid://dxcfpp5okoqaf" path="res://Player/player.tscn" id="2_ojb66"]
 [ext_resource type="Script" path="res://Player/Camera2D.gd" id="3_8oosb"]
+[ext_resource type="Texture2D" uid="uid://boepmi44arof" path="res://Art assets/Space_Background fixed.png" id="5_tdign"]
 
 [sub_resource type="Animation" id="Animation_flnnt"]
 resource_name = "Close"
@@ -76,3 +77,11 @@ libraries = {
 }
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(2560, 2520)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("5_tdign")

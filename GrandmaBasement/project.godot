@@ -18,6 +18,7 @@ config/icon="res://Art assets/icon.svg"
 [autoload]
 
 player_data="*res://Player/autoloads.gd"
+music="*res://Levels/music.tscn"
 
 [display]
 

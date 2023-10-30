@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://dif5jtrxtmdt"]
+
+[ext_resource type="Script" path="res://Levels/Dome.gd" id="1_tdh3u"]
+[ext_resource type="PackedScene" uid="uid://6befa61ii2bk" path="res://Levels/Dome2/Dome2Screen1.tscn" id="2_pingp"]
+[ext_resource type="PackedScene" uid="uid://dxcfpp5okoqaf" path="res://Player/player.tscn" id="3_2563j"]
+[ext_resource type="Script" path="res://Player/Camera2D.gd" id="4_s6mjs"]
+[ext_resource type="Texture2D" uid="uid://boepmi44arof" path="res://Art assets/Space_Background fixed.png" id="5_kxhc3"]
+
+[sub_resource type="Animation" id="Animation_flnnt"]
+resource_name = "Close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8vstu"]
+resource_name = "Open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wf8xk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cyg3y"]
+_data = {
+"Close": SubResource("Animation_flnnt"),
+"Open": SubResource("Animation_8vstu"),
+"RESET": SubResource("Animation_wf8xk")
+}
+
+[node name="Dome1" type="Node2D"]
+script = ExtResource("1_tdh3u")
+
+[node name="Dome1Screen1" parent="." instance=ExtResource("2_pingp")]
+
+[node name="Player" parent="." instance=ExtResource("3_2563j")]
+position = Vector2(-794, 16)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+script = ExtResource("4_s6mjs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cyg3y")
+}
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(2560, 1440)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("5_kxhc3")

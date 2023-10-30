@@ -15,6 +15,7 @@ offset = Vector2(-1920, 0)
 
 [node name="Teleport" parent="." instance=ExtResource("3_v7p7d")]
 position = Vector2(-15, -65)
+next_level = "res://Levels/Dome2/dome_2.tscn"
 
 [node name="Label" type="Label" parent="."]
 offset_right = 171.0

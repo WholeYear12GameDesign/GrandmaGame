@@ -18,7 +18,7 @@
 [ext_resource type="FontFile" uid="uid://bcl842aehi6gk" path="res://Art assets/PixelAE-Regular.ttf" id="10_aybem"]
 [ext_resource type="Theme" uid="uid://ddq2fmd52ybv6" path="res://Styles/BoxTheme.tres" id="10_nc8pa"]
 [ext_resource type="Texture2D" uid="uid://63u6x57hdpbx" path="res://Art assets/Oxygen.png" id="11_v6ddp"]
-[ext_resource type="PackedScene" path="res://Player/states/die.tscn" id="14_cjlbc"]
+[ext_resource type="PackedScene" uid="uid://gpw1x2r0g6if" path="res://Player/states/die.tscn" id="14_cjlbc"]
 [ext_resource type="Texture2D" uid="uid://cwnfxk48p0dwh" path="res://Art assets/Oxygen Tank x2.png" id="15_aatiu"]
 [ext_resource type="Script" path="res://Player/o2 bar/oxygenbar2.gd" id="16_qxjyf"]
 [ext_resource type="Texture2D" uid="uid://6og5wpwasvbo" path="res://Art assets/Oxygen Tank Outline-1.png" id="16_vje36"]

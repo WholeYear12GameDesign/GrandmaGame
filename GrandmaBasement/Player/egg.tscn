@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=3 uid="uid://y18s4tc3yb37"]
+[gd_scene load_steps=126 format=3 uid="uid://dlw7ypcyu7bb1"]
 
 [ext_resource type="Texture2D" uid="uid://fxxog0by5a34" path="res://Art assets/yggdrasil eg idle_43x45.png" id="1_4syjt"]
 [ext_resource type="Texture2D" uid="uid://bakjw13qltbqa" path="res://Art assets/yggdrasil eg collect_197x129.png" id="2_cvm56"]
@@ -861,6 +861,7 @@ animations = [{
 radius = 17.0
 
 [node name="egg" type="AnimatedSprite2D"]
+modulate = Color(1, 1, 1, 0.196078)
 sprite_frames = SubResource("SpriteFrames_b7vtb")
 frame_progress = 0.294858
 script = ExtResource("3_nwig0")
@@ -869,3 +870,6 @@ script = ExtResource("3_nwig0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_5j652")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

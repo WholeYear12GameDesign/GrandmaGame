@@ -27,6 +27,7 @@ var okh : float = 0.0 #who ever added this please tell me what it is for
 var dead = false
 
 func _ready():
+	music.music()
 	if player_data.tanks[0] != "OXYGEN":
 		player_data.current_tank = 1
 	else:

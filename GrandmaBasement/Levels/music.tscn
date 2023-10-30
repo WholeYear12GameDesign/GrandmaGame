@@ -1,7 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://3jhk5pfcouvo"]
+[gd_scene load_steps=3 format=3 uid="uid://3jhk5pfcouvo"]
 
 [ext_resource type="AudioStream" uid="uid://dlcjv0lyeotsi" path="res://Art assets/Electric_Current.mp3" id="1_k5nig"]
+[ext_resource type="Script" path="res://Levels/music.gd" id="2_i2tu5"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 stream = ExtResource("1_k5nig")
+volume_db = 24.0
 autoplay = true
+script = ExtResource("2_i2tu5")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

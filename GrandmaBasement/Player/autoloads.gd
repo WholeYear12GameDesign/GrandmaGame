@@ -9,4 +9,5 @@ var gotten_items = []
 var current_npc = ""
 var item_count = 0
 var holding_gift = false
-var holding_key = false 
+var holding_key = false
+var door_unlocked = false

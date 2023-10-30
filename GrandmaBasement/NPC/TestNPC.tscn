@@ -1,13 +1,68 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgxl7y5l0ninl"]
+[gd_scene load_steps=12 format=3 uid="uid://dgxl7y5l0ninl"]
 
 [ext_resource type="Script" path="res://NPC/NPC.gd" id="1_kag5u"]
-[ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="2_0c5av"]
+[ext_resource type="Texture2D" uid="uid://dhke6mdc510gg" path="res://Art assets/FISH DUDE.png" id="2_sf4kk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7w0h"]
 size = Vector2(60, 114)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05ntk"]
 size = Vector2(92, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skvrk"]
+atlas = ExtResource("2_sf4kk")
+region = Rect2(0, 0, 23, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ho214"]
+atlas = ExtResource("2_sf4kk")
+region = Rect2(23, 0, 23, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2j2mm"]
+atlas = ExtResource("2_sf4kk")
+region = Rect2(46, 0, 23, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug656"]
+atlas = ExtResource("2_sf4kk")
+region = Rect2(69, 0, 23, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v8ec"]
+atlas = ExtResource("2_sf4kk")
+region = Rect2(92, 0, 23, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsttk"]
+atlas = ExtResource("2_sf4kk")
+region = Rect2(115, 0, 23, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pbum0"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skvrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ho214")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2j2mm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug656")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2v8ec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsttk")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
 
 [node name="TestNPC" type="StaticBody2D"]
 script = ExtResource("1_kag5u")
@@ -16,14 +71,17 @@ script = ExtResource("1_kag5u")
 position = Vector2(-1, -2)
 shape = SubResource("RectangleShape2D_e7w0h")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.421875, 0.828125)
-texture = ExtResource("2_0c5av")
-
 [node name="GiveItem" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GiveItem"]
 shape = SubResource("RectangleShape2D_05ntk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.78261, 2.78261)
+sprite_frames = SubResource("SpriteFrames_pbum0")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.24505
 
 [connection signal="area_entered" from="GiveItem" to="." method="_on_give_item_area_entered"]
 [connection signal="body_entered" from="GiveItem" to="." method="_on_give_item_body_entered"]

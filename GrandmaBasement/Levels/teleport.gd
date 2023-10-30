@@ -4,6 +4,7 @@ extends Area2D
 
 # switch to a diffrent level
 func load_level(path):
+	player_data.door_unlocked = false
 	get_tree().change_scene_to_file(path)
 
 # runs switch_screen() when player collides with collision shape

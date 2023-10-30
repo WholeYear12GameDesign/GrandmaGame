@@ -144,4 +144,5 @@ func _on_sprite_animation_finished():
 		dead = false
 
 func run_dialogue(message):
+	$CanvasLayer/Panel/Label.text = message
 	$CanvasLayer/AnimationPlayer.play("Run")

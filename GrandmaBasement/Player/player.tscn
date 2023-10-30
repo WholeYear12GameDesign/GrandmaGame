@@ -1004,7 +1004,6 @@ theme = ExtResource("10_nc8pa")
 
 [node name="ItemSprite" type="Sprite2D" parent="CanvasLayer/CurrentItem"]
 position = Vector2(88, 96)
-scale = Vector2(4, 4)
 
 [node name="oxygenbar" type="TextureProgressBar" parent="CanvasLayer"]
 offset_left = 1718.0

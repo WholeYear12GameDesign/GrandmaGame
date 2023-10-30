@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bp5b1rp7njaor"]
 
-[ext_resource type="Texture2D" uid="uid://va5cc5u4i3i2" path="res://Art assets/icon.svg" id="1_knvkx"]
 [ext_resource type="Script" path="res://Levels/teleport.gd" id="1_mslhv"]
+[ext_resource type="Texture2D" uid="uid://qr4n4t220icf" path="res://Art assets/Grandma's basemtent tileset.png" id="2_6pl7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dgeeq"]
 size = Vector2(130, 126)
@@ -10,14 +10,18 @@ size = Vector2(130, 126)
 script = ExtResource("1_mslhv")
 next_level = "res://Levels/Dome1/Dome_1.tscn"
 
-[node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("1_knvkx")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dgeeq")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-198.77, -316.608)
+scale = Vector2(2.77184, 2.63)
+texture = ExtResource("2_6pl7e")
+polygon = PackedVector2Array(95.8824, 96.4706, 95.6863, 144.314, 47.8431, 145.098, 48.0392, 96.0784)
+uv = PackedVector2Array(95.8824, 96.4706, 95.6863, 144.314, 47.8431, 145.098, 48.0392, 96.0784)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

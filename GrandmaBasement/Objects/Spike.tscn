@@ -452,6 +452,7 @@ uv = PackedVector2Array(175.368, 47.925, 223.695, 48.0589, 223.293, 32.7979, 176
 position = Vector2(-1, -5)
 scale = Vector2(0.140762, 0.104046)
 sprite_frames = SubResource("SpriteFrames_0j73i")
-frame_progress = 0.542431
+autoplay = "default"
+frame_progress = 0.592384
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -29,5 +29,6 @@ script = SubResource("GDScript_2or84")
 shape = SubResource("RectangleShape2D_w31j2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
